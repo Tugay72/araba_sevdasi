@@ -17,14 +17,16 @@ class ProfilDondur extends StatelessWidget {
           return ListTile(
             title: Text(
               liste[index].icerik,
-              style: TextStyle(
+              style: const TextStyle(
+                fontSize: 18,
                 fontFamily: "Oswald",
                 fontWeight: FontWeight.w400,
               ),
             ),
             subtitle: Text(
               liste[index].baslik,
-              style: TextStyle(
+              style: const TextStyle(
+                fontSize: 12,
                 fontFamily: "Oswald",
                 fontWeight: FontWeight.w400,
               ),

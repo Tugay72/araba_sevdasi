@@ -91,7 +91,7 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 255, 151, 96),
+              backgroundColor:  Color.fromARGB(255, 96, 170, 255),
               icon: Icon(Icons.directions_car),
               label: "Araba",
             ),
@@ -101,7 +101,7 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Yakıt",
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 96, 195, 255),
+              backgroundColor: Color.fromARGB(255, 96, 238, 77),
               icon: Icon(Icons.home_rounded),
               label: "Ana Sayfa",
             ),
@@ -114,11 +114,11 @@ class AnaMenuState extends State<AnaMenu> {
           currentIndex: suAnkiIndex,
           onTap: sayfaDegistir,
         ),
-      ),
+      ),     
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.green,
+          seedColor: Color.fromARGB(255, 51, 203, 255),
           brightness: temaMod,
         ),
       ),

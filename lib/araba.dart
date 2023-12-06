@@ -14,9 +14,22 @@ class Araba extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              height: 270,
-              width: 500,
-              color: Colors.blue,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 96, 170, 255),
+                    Color.fromARGB(255, 151, 217, 255)
+                  ],
+                ),
+              ),
+              child: SizedBox(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 96),
+                    child:Image.asset("assets/images/araba.png")
+                   ),
+                ),
             ),
           ),
           Expanded(
@@ -32,7 +45,7 @@ class Araba extends StatelessWidget {
                       children: [
                         //Araba marka
                         Padding(
-                          padding: const EdgeInsets.only(top: 15, bottom: 20),
+                          padding: const EdgeInsets.only(top: 16, bottom: 16),
                           child: SizedBox(
                             width: 350,
                             child: TextField(
@@ -51,7 +64,7 @@ class Araba extends StatelessWidget {
                         ),
                         //Araba model
                         Padding(
-                          padding: const EdgeInsets.only(left: 30, bottom: 20),
+                          padding: const EdgeInsets.only(left: 32, bottom: 16),
                           child: Row(
                             children: [
                               const Text(
@@ -76,7 +89,7 @@ class Araba extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 underline: Container(
                                   height: 2,
-                                  color: Colors.orange,
+                                  color: const Color.fromARGB(255, 96, 170, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
@@ -85,14 +98,15 @@ class Araba extends StatelessWidget {
                         ),
                         //Araba Yıl
                         Padding(
-                          padding: const EdgeInsets.only(left: 30, bottom: 20),
+                          padding: const EdgeInsets.only(left: 32, bottom: 16),
                           child: Row(
                             children: [
                               const Text(
-                                "Araba Yılı        :",
+                                "Üretim Yılı     :",
                                 style: TextStyle(
                                   fontFamily: "Oswald",
                                   fontSize: 24,
+                                  color:  Colors.black
                                 ),
                               ),
                               const SizedBox(
@@ -110,7 +124,7 @@ class Araba extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 underline: Container(
                                   height: 2,
-                                  color: Colors.orange,
+                                  color: const Color.fromARGB(255, 96, 170, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
@@ -125,7 +139,7 @@ class Araba extends StatelessWidget {
                           child: Column(
                             children: [
                               const Padding(
-                                padding: EdgeInsets.only(bottom: 10),
+                                padding: EdgeInsets.only(top:16, bottom: 16),
                                 child: Text(
                                   "ARABA EKLE",
                                   style: TextStyle(
@@ -139,12 +153,12 @@ class Araba extends StatelessWidget {
                                 height: 80,
                                 child: FloatingActionButton(
                                   backgroundColor:
-                                      Color.fromARGB(255, 255, 151, 96),
+                                      const Color.fromARGB(255, 96, 170, 255),
                                   shape: const CircleBorder(),
                                   onPressed: () {},
                                   child: const Icon(
                                     Icons.add,
-                                    color: Colors.white,
+                                    color:  Colors.white,
                                   ),
                                 ),
                               ),

@@ -45,7 +45,7 @@ class Profil extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
-              height: 470,
+              height: 500,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

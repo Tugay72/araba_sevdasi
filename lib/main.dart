@@ -91,7 +91,7 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor:  Color.fromARGB(255, 96, 170, 255),
+              backgroundColor:  Color.fromARGB(255, 46, 154, 255),
               icon: Icon(Icons.directions_car),
               label: "Araba",
             ),
@@ -106,7 +106,7 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Ana Sayfa",
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 219, 96, 255),
+              backgroundColor: Color.fromARGB(255, 46, 154, 255),
               icon: Icon(Icons.person_pin_rounded),
               label: "Profil",
             ),
@@ -118,10 +118,12 @@ class AnaMenuState extends State<AnaMenu> {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 51, 203, 255),
+          seedColor: const Color.fromARGB(255, 51, 203, 255),
           brightness: temaMod,
         ),
       ),
     );
   }
 }
+
+

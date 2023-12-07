@@ -25,8 +25,8 @@ class Profil extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                     Color.fromARGB(255, 60, 46, 255),
-                     Color.fromARGB(255, 46, 154, 255)
+                    Color.fromARGB(255, 60, 46, 255),
+                    Color.fromARGB(255, 46, 154, 255)
                   ],
                 ),
               ),

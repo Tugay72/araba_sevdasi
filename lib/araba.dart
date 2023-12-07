@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
@@ -13,25 +12,13 @@ class Araba extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              width: 500,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color.fromARGB(255, 96, 170, 255),
-                    Color.fromARGB(255, 151, 217, 255)
-                  ],
-                ),
-              ),
-              child: SizedBox(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 170),
-                  child: Image.asset("assets/images/araba.png"),
-                ),
+          // Araba fotoğrafı
+          CustomPaint(
+            painter: SmoothWavesPainter(),
+            child: SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 96),
+                child: Image.asset("assets/images/araba.png"),
               ),
             ),
           ),
@@ -43,7 +30,6 @@ class Araba extends StatelessWidget {
                   child: Container(
                     height: 431,
                     width: 500,
-                    color: Colors.white,
                     child: Column(
                       children: [
                         //Araba marka
@@ -65,6 +51,7 @@ class Araba extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         //Araba model
                         Padding(
                           padding: const EdgeInsets.only(left: 32, bottom: 16),
@@ -94,13 +81,14 @@ class Araba extends StatelessWidget {
                                 underline: Container(
                                   height: 2,
                                   color:
-                                      const Color.fromARGB(255, 96, 170, 255),
+                                      const Color.fromARGB(255, 46, 154, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
                             ],
                           ),
                         ),
+
                         //Araba Yıl
                         Padding(
                           padding: const EdgeInsets.only(left: 32, bottom: 16),
@@ -129,13 +117,14 @@ class Araba extends StatelessWidget {
                                 underline: Container(
                                   height: 2,
                                   color:
-                                      const Color.fromARGB(255, 96, 170, 255),
+                                      const Color.fromARGB(255, 46, 154, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
                             ],
                           ),
                         ),
+
                         //Ekle tuşu (yuvarlak içine "+")
                         Padding(
                           padding: const EdgeInsets.only(
@@ -158,7 +147,7 @@ class Araba extends StatelessWidget {
                                 height: 80,
                                 child: FloatingActionButton(
                                   backgroundColor:
-                                      const Color.fromARGB(255, 96, 170, 255),
+                                      const Color.fromARGB(255, 46, 154, 255),
                                   shape: const CircleBorder(),
                                   onPressed: () {},
                                   child: const Icon(

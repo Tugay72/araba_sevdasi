@@ -25,11 +25,11 @@ class Araba extends StatelessWidget {
                 ),
               ),
               child: SizedBox(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 96),
-                    child:Image.asset("assets/images/araba.png")
-                   ),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 101),
+                  child: Image.asset("assets/images/araba.png"),
                 ),
+              ),
             ),
           ),
           Expanded(
@@ -72,10 +72,11 @@ class Araba extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Oswald",
+                                  color: Colors.black,
                                 ),
                               ),
                               const SizedBox(
-                                width: 50,
+                                width: 52,
                               ),
                               DropdownButton(
                                 value: dropDownValue,
@@ -89,7 +90,8 @@ class Araba extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 underline: Container(
                                   height: 2,
-                                  color: const Color.fromARGB(255, 96, 170, 255),
+                                  color:
+                                      const Color.fromARGB(255, 96, 170, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
@@ -102,12 +104,11 @@ class Araba extends StatelessWidget {
                           child: Row(
                             children: [
                               const Text(
-                                "Üretim Yılı     :",
+                                "Üretim Yılı      :",
                                 style: TextStyle(
-                                  fontFamily: "Oswald",
-                                  fontSize: 24,
-                                  color:  Colors.black
-                                ),
+                                    fontFamily: "Oswald",
+                                    fontSize: 24,
+                                    color: Colors.black),
                               ),
                               const SizedBox(
                                 width: 50,
@@ -124,7 +125,8 @@ class Araba extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 underline: Container(
                                   height: 2,
-                                  color: const Color.fromARGB(255, 96, 170, 255),
+                                  color:
+                                      const Color.fromARGB(255, 96, 170, 255),
                                 ),
                                 onChanged: (value) => (),
                               ),
@@ -139,7 +141,7 @@ class Araba extends StatelessWidget {
                           child: Column(
                             children: [
                               const Padding(
-                                padding: EdgeInsets.only(top:16, bottom: 16),
+                                padding: EdgeInsets.only(top: 16, bottom: 16),
                                 child: Text(
                                   "ARABA EKLE",
                                   style: TextStyle(
@@ -158,7 +160,7 @@ class Araba extends StatelessWidget {
                                   onPressed: () {},
                                   child: const Icon(
                                     Icons.add,
-                                    color:  Colors.white,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),

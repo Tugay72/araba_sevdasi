@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/araba.dart';
 import 'package:araba_sevdasi/benzin.dart';
 import 'package:araba_sevdasi/profil.dart';
-//   
+//
+
 void main() {
   runApp(const Uygulama());
 }
@@ -106,7 +107,7 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Araba",
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 46, 154, 255),
+              backgroundColor: Color.fromARGB(255, 252, 82, 255),
               icon: Icon(Icons.person_pin_rounded),
               label: "Profil",
             ),
@@ -114,7 +115,7 @@ class AnaMenuState extends State<AnaMenu> {
           currentIndex: suAnkiIndex,
           onTap: sayfaDegistir,
         ),
-      ),     
+      ),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -125,5 +126,3 @@ class AnaMenuState extends State<AnaMenu> {
     );
   }
 }
-
-

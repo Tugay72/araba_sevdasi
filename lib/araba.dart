@@ -62,7 +62,6 @@ class Araba extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Oswald",
-                                  color: Colors.black,
                                 ),
                               ),
                               const SizedBox(
@@ -97,9 +96,9 @@ class Araba extends StatelessWidget {
                               const Text(
                                 "Üretim Yılı      :",
                                 style: TextStyle(
-                                    fontFamily: "Oswald",
-                                    fontSize: 24,
-                                    color: Colors.black),
+                                  fontFamily: "Oswald",
+                                  fontSize: 24,
+                                ),
                               ),
                               const SizedBox(
                                 width: 50,

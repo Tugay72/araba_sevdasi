@@ -52,7 +52,7 @@ class AnaMenu extends StatefulWidget {
 }
 
 class AnaMenuState extends State<AnaMenu> {
-  var suAnkiIndex = 2;
+  var suAnkiIndex = 0;
 
   List<Widget> pageListFunc() => [
         Anasayfa(),
@@ -102,7 +102,7 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Yakıt",
             ),
             BottomNavigationBarItem(
-              backgroundColor:  Color.fromARGB(255, 46, 154, 255),
+              backgroundColor: Color.fromARGB(255, 46, 154, 255),
               icon: Icon(Icons.directions_car),
               label: "Araba",
             ),

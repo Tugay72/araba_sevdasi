@@ -54,9 +54,9 @@ class AnaMenuState extends State<AnaMenu> {
   var suAnkiIndex = 2;
 
   List<Widget> pageListFunc() => [
-        Araba(),
-        Benzin(),
         Anasayfa(),
+        Benzin(),
+        Araba(),
         Profil(
           indexDegistir: temaDegistir,
         )
@@ -91,9 +91,9 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor:  Color.fromARGB(255, 46, 154, 255),
-              icon: Icon(Icons.directions_car),
-              label: "Araba",
+              backgroundColor: Color.fromARGB(255, 73, 218, 54),
+              icon: Icon(Icons.home_rounded),
+              label: "Ana Sayfa",
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 255, 96, 96),
@@ -101,9 +101,9 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Yakıt",
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 96, 238, 77),
-              icon: Icon(Icons.home_rounded),
-              label: "Ana Sayfa",
+              backgroundColor:  Color.fromARGB(255, 46, 154, 255),
+              icon: Icon(Icons.directions_car),
+              label: "Araba",
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 46, 154, 255),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+IconData directions_car = const IconData(0xe1d7, fontFamily: 'MaterialIcons');
 
 class Araba extends StatelessWidget {
   Araba();
@@ -129,30 +130,70 @@ class Araba extends StatelessWidget {
                           padding: const EdgeInsets.only(
                             top: 15,
                           ),
-                          child: Column(
+                          child: Row(
                             children: [
-                              const Padding(
-                                padding: EdgeInsets.only(top: 16, bottom: 16),
-                                child: Text(
-                                  "ARABA EKLE",
-                                  style: TextStyle(
-                                    fontFamily: "Oswald",
-                                    fontSize: 30,
-                                  ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 10, bottom: 10),
+                                      child: Text(
+                                        "ARABA EKLE",
+                                        style: TextStyle(
+                                          fontFamily: "Oswald",
+                                          fontSize: 30,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 80,
+                                      height: 80,
+                                      child: FloatingActionButton(
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 46, 154, 255),
+                                        shape: const CircleBorder(),
+                                        onPressed: () {},
+                                        child: const Icon(
+                                          Icons.add,
+                                          color: Colors.white,
+                                          size: 35,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              SizedBox(
-                                width: 80,
-                                height: 80,
-                                child: FloatingActionButton(
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 46, 154, 255),
-                                  shape: const CircleBorder(),
-                                  onPressed: () {},
-                                  child: const Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                  ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 10, bottom: 10),
+                                      child: Text(
+                                        "ARABALARIM",
+                                        style: TextStyle(
+                                          fontFamily: "Oswald",
+                                          fontSize: 30,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 80,
+                                      height: 80,
+                                      child: FloatingActionButton(
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 46, 154, 255),
+                                        shape: const CircleBorder(),
+                                        onPressed: () {},
+                                        child: const Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          size: 35,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

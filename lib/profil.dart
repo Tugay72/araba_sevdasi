@@ -14,7 +14,7 @@ class Profil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 250, 204, 19),
+      backgroundColor: const Color.fromARGB(255, 250, 204, 19),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -49,18 +49,12 @@ class Profil extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: ProfilDondur(liste),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 50),
                   Padding(
-                    padding: const EdgeInsets.only(left: 14),
+                    padding: const EdgeInsets.only(left: 8),
+                    child: ProfilDondur(liste),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 22, top: 20),
                     child: themeButton(),
                   ),
                 ],
@@ -75,7 +69,6 @@ class Profil extends StatelessWidget {
   Widget themeButton() {
     return Row(
       children: [
-        const SizedBox(width: 8),
         const Text(
           "Tema:",
           style: TextStyle(

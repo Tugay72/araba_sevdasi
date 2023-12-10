@@ -108,7 +108,7 @@ class AnaMenuState extends State<AnaMenu> {
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 253, 203, 75),
-              icon: Icon(Icons.person_pin_rounded),
+              icon: Icon(Icons.account_circle),
               label: "Profil",
             ),
           ],

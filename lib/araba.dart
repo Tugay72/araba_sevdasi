@@ -1,3 +1,4 @@
+import 'package:araba_sevdasi/kayitliArabalar/kayitli_arabalar.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -6,6 +7,12 @@ IconData directions_car = const IconData(0xe1d7, fontFamily: 'MaterialIcons');
 
 class Araba extends StatelessWidget {
   Araba();
+  void git(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => kayitliArabalar()),
+    );
+  }
 
   Widget build(BuildContext context) {
     var marka = TextEditingController();
@@ -185,7 +192,7 @@ class Araba extends StatelessWidget {
                                         backgroundColor: const Color.fromARGB(
                                             255, 46, 154, 255),
                                         shape: const CircleBorder(),
-                                        onPressed: () {},
+                                        onPressed: () => git(context),
                                         child: const Icon(
                                           Icons.arrow_forward_ios_rounded,
                                           size: 35,

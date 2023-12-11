@@ -39,18 +39,24 @@ class Profil extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: ProfilDondur(liste),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 22, top: 20),
-                  child: themeButton(),
-                ),
-              ],
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              height: 500,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: ProfilDondur(liste),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 22, top: 20),
+                    child: themeButton(),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

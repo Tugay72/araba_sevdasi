@@ -14,7 +14,6 @@ class Profil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 204, 19),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -40,25 +39,18 @@ class Profil extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-              height: 500,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: ProfilDondur(liste),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 22, top: 20),
-                    child: themeButton(),
-                  ),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: ProfilDondur(liste),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 22, top: 20),
+                  child: themeButton(),
+                ),
+              ],
             ),
           ),
         ],
@@ -72,10 +64,10 @@ class Profil extends StatelessWidget {
         const Text(
           "Tema:",
           style: TextStyle(
-              color: Color.fromARGB(255, 48, 48, 48),
-              fontSize: 20,
-              fontFamily: "Oswald",
-              fontWeight: FontWeight.w400),
+            fontSize: 20,
+            fontFamily: "Oswald",
+            fontWeight: FontWeight.w400,
+          ),
         ),
         const SizedBox(width: 180),
         Padding(

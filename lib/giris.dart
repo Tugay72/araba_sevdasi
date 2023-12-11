@@ -76,6 +76,7 @@ class GirisEkrani extends StatelessWidget {
                         child: const Text(
                           "Hadi Başlayalım!",
                           style: TextStyle(
+                            color: Colors.white,
                             fontStyle: FontStyle.italic,
                             fontSize: 36,
                           ),

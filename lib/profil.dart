@@ -8,12 +8,15 @@ int lastToggleIndex = 1;
 // ignore: must_be_immutable
 class Profil extends StatelessWidget {
   Profil({super.key, this.indexDegistir});
+
   // ignore: prefer_typing_uninitialized_variables
   var indexDegistir;
   var liste = ProfilListe.profilListe;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 250, 204, 19),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -39,6 +42,13 @@ class Profil extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
+            child: Container(
+              decoration: BoxDecoration( 
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                color: Theme.of(context).colorScheme.background,
+                ),
+              width: 431,
+              height: 500,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -53,6 +63,7 @@ class Profil extends StatelessWidget {
               ],
             ),
           ),
+        )
         ],
       ),
     );

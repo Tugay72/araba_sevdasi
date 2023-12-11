@@ -1,5 +1,5 @@
 import 'package:araba_sevdasi/anasayfa.dart';
-import 'package:araba_sevdasi/giris.dart';
+//import 'package:araba_sevdasi/giris.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/araba.dart';
 import 'package:araba_sevdasi/benzin.dart';
@@ -28,16 +28,17 @@ class UygulamaState extends State<Uygulama> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            GirisEkrani(
-              basla: basla,
-            ),
-          ],
-        ),
-      ),
+      home: AnaMenu(),
+      // Scaffold(
+      //   body: Column(
+      //     mainAxisAlignment: MainAxisAlignment.start,
+      //     children: [
+      //       GirisEkrani(
+      //         basla: basla,
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }

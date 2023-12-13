@@ -1,4 +1,4 @@
-import 'package:araba_sevdasi/BenzinVeri/yakit_class.dart';
+import 'package:araba_sevdasi/Yak%C4%B1tVeri/yakit_class.dart';
 
 class YakitListe {
   static List<yakitClass> yakitListe = [

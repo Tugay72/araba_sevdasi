@@ -58,7 +58,7 @@ class Benzin extends StatelessWidget {
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin:${liste[1].benzin}\nMotorin: ${liste[1].motorin}\nLpg: ${liste[1].lpg}",
+                    "Benzin: ${liste[1].benzin}\nMotorin: ${liste[1].motorin}\nLpg: ${liste[1].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",

@@ -1,15 +1,15 @@
+import 'package:araba_sevdasi/BenzinVeri/yakit_class.dart';
+import 'package:araba_sevdasi/BenzinVeri/yakit_liste.dart';
 import 'package:flutter/material.dart';
 
 class Benzin extends StatelessWidget {
   Benzin({super.key});
   @override
   Widget build(BuildContext context) {
-    double shellBenzin = 2.27;
-    double shellMotorin = 2.13;
-    double shellLpg = 0.97;
+    List<yakitClass> liste = YakitListe.yakitListe;
 
     return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 30),
       child: Column(
         children: [
           Card(
@@ -19,16 +19,16 @@ class Benzin extends StatelessWidget {
               children: [
                 ListTile(
                   leading: Image.asset("assets/images/ShellLogo.png"),
-                  title: const Text(
-                    "SHELL",
-                    style: TextStyle(
+                  title: Text(
+                    liste[0].marka,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin: $shellBenzin\nMotorin: $shellMotorin\nLpg: $shellLpg",
+                    "Benzin: ${liste[0].benzin}\nMotorin: ${liste[0].motorin}\nLpg: ${liste[0].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",
@@ -49,16 +49,16 @@ class Benzin extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 23, right: 19),
                     child: Image.asset("assets/images/PetrolOfisiLogo.png"),
                   ),
-                  title: const Text(
-                    "Petrol Ofisi",
-                    style: TextStyle(
+                  title: Text(
+                    liste[1].marka,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin: $shellBenzin\nMotorin: $shellMotorin\nLpg: $shellLpg",
+                    "Benzin:${liste[1].benzin}\nMotorin: ${liste[1].motorin}\nLpg: ${liste[1].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",
@@ -79,16 +79,16 @@ class Benzin extends StatelessWidget {
                     width: 98,
                     child: Image.asset("assets/images/OpetLogo.png"),
                   ),
-                  title: const Text(
-                    "Opet",
-                    style: TextStyle(
+                  title: Text(
+                    liste[2].marka,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin: $shellBenzin\nMotorin: $shellMotorin\nLpg: $shellLpg",
+                    "Benzin: ${liste[2].benzin}\nMotorin: ${liste[2].motorin}\nLpg: ${liste[2].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",
@@ -109,16 +109,16 @@ class Benzin extends StatelessWidget {
                     width: 97,
                     child: Image.asset("assets/images/BPLogo.png"),
                   ),
-                  title: const Text(
-                    "BP",
-                    style: TextStyle(
+                  title: Text(
+                    liste[3].marka,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin: $shellBenzin\nMotorin: $shellMotorin\nLpg: $shellLpg",
+                    "Benzin: ${liste[3].benzin}\nMotorin: ${liste[3].motorin}\nLpg: ${liste[3].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",
@@ -139,16 +139,16 @@ class Benzin extends StatelessWidget {
                     width: 97,
                     child: Image.asset("assets/images/AygazLogo.png"),
                   ),
-                  title: const Text(
-                    "BP",
-                    style: TextStyle(
+                  title: Text(
+                    liste[4].marka,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   subtitle: Text(
-                    "Benzin: $shellBenzin\nMotorin: $shellMotorin\nLpg: $shellLpg",
+                    "Benzin: ${liste[4].benzin}\nMotorin: ${liste[4].motorin}\nLpg: ${liste[4].lpg}",
                     style: const TextStyle(
                       fontSize: 16,
                       fontFamily: "Oswald",

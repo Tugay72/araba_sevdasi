@@ -1,5 +1,5 @@
-import 'package:araba_sevdasi/BenzinVeri/yakit_class.dart';
-import 'package:araba_sevdasi/BenzinVeri/yakit_liste.dart';
+import 'package:araba_sevdasi/Yak%C4%B1tVeri/yakit_class.dart';
+import 'package:araba_sevdasi/Yak%C4%B1tVeri/yakit_liste.dart';
 import 'package:flutter/material.dart';
 
 class Benzin extends StatelessWidget {

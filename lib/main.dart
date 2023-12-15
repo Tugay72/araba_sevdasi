@@ -26,7 +26,7 @@ class UygulamaState extends State<Uygulama> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: AnaMenu(),
       // Scaffold(
       //   body: Column(
@@ -92,7 +92,7 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 73, 218, 54),
+              backgroundColor: Color.fromARGB(255, 254, 207, 0),
               icon: Icon(Icons.home_rounded),
               label: "Ana Sayfa",
             ),
@@ -107,7 +107,7 @@ class AnaMenuState extends State<AnaMenu> {
               label: "Araba",
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 253, 203, 75),
+              backgroundColor: Color.fromARGB(255, 110, 0, 132),
               icon: Icon(Icons.account_circle),
               label: "Profil",
             ),

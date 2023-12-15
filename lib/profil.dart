@@ -16,7 +16,7 @@ class Profil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 204, 19),
+      backgroundColor: const Color.fromARGB(255, 110, 0, 132),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -27,8 +27,8 @@ class Profil extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color.fromARGB(255, 252, 82, 255),
-                    Color.fromARGB(255, 250, 204, 19),
+                    Color.fromARGB(255, 6, 2, 210),
+                    Color.fromARGB(255, 110, 0, 132),
                   ],
                 ),
               ),

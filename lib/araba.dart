@@ -5,8 +5,16 @@ import 'dart:math';
 List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 IconData directions_car = const IconData(0xe1d7, fontFamily: 'MaterialIcons');
 
-class Araba extends StatelessWidget {
+class Araba extends StatefulWidget {
+  @override
+  State<Araba> createState() => ArabaState();
   Araba();
+}
+
+var dropDownValue1 = list.first;
+var dropDownValue2 = list.first;
+
+class ArabaState extends State<Araba> {
   void git(BuildContext context) {
     Navigator.push(
       context,
@@ -14,9 +22,15 @@ class Araba extends StatelessWidget {
     );
   }
 
+  void modelSecildi() {
+    durum2 = true;
+  }
+
+  bool durum1 = true;
+  bool durum2 = false;
   Widget build(BuildContext context) {
     var marka = TextEditingController();
-    var dropDownValue = list.first;
+
     return Scaffold(
       body: Column(
         children: [
@@ -73,25 +87,24 @@ class Araba extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                width: 52,
+                                width: 33,
                               ),
-                              DropdownButton(
-                                value: dropDownValue,
-                                items: list.map<DropdownMenuItem<String>>(
-                                    (String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
+                              DropdownMenu(
+                                initialSelection: list.first,
+                                onSelected: (String? value) {
+                                  // This is called when the user selects an item.
+                                  setState(() {
+                                    dropDownValue1 = value!;
+                                    modelSecildi();
+                                  });
+                                },
+                                dropdownMenuEntries: list
+                                    .map<DropdownMenuEntry<String>>(
+                                        (String value) {
+                                  return DropdownMenuEntry<String>(
+                                      value: value, label: value);
                                 }).toList(),
-                                borderRadius: BorderRadius.circular(20),
-                                underline: Container(
-                                  height: 2,
-                                  color:
-                                      const Color.fromARGB(255, 46, 154, 255),
-                                ),
-                                onChanged: (value) => (),
-                              ),
+                              )
                             ],
                           ),
                         ),
@@ -109,102 +122,98 @@ class Araba extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                width: 50,
+                                width: 30,
                               ),
-                              DropdownButton(
-                                value: dropDownValue,
-                                items: list.map<DropdownMenuItem<String>>(
-                                    (String value) {
-                                  return DropdownMenuItem<String>(
+                              DropdownMenu(
+                                initialSelection: list.first,
+                                onSelected: (String? value) {
+                                  // This is called when the user selects an item.
+                                  setState(() {
+                                    dropDownValue2 = value!;
+                                  });
+                                },
+                                dropdownMenuEntries: list
+                                    .map<DropdownMenuEntry<String>>(
+                                        (String value) {
+                                  return DropdownMenuEntry<String>(
                                     value: value,
-                                    child: Text(value),
+                                    label: value,
+                                    enabled: durum2,
                                   );
                                 }).toList(),
-                                borderRadius: BorderRadius.circular(20),
-                                underline: Container(
-                                  height: 2,
-                                  color:
-                                      const Color.fromARGB(255, 46, 154, 255),
-                                ),
-                                onChanged: (value) => (),
-                              ),
+                              )
                             ],
                           ),
                         ),
 
                         //Ekle tuşu (yuvarlak içine "+")
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 15,
-                          ),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 10, bottom: 10),
-                                      child: Text(
-                                        "ARABA EKLE",
-                                        style: TextStyle(
-                                          fontFamily: "Oswald",
-                                          fontSize: 30,
-                                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(top: 10, bottom: 10),
+                                    child: Text(
+                                      "ARABA EKLE",
+                                      style: TextStyle(
+                                        fontFamily: "Oswald",
+                                        fontSize: 30,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 80,
-                                      height: 80,
-                                      child: FloatingActionButton(
-                                        backgroundColor: const Color.fromARGB(
-                                            255, 46, 154, 255),
-                                        shape: const CircleBorder(),
-                                        onPressed: () {},
-                                        child: const Icon(
-                                          Icons.add,
-                                          color: Colors.white,
-                                          size: 35,
-                                        ),
+                                  ),
+                                  SizedBox(
+                                    width: 80,
+                                    height: 80,
+                                    child: FloatingActionButton(
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 46, 154, 255),
+                                      shape: const CircleBorder(),
+                                      onPressed: () {},
+                                      child: const Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                        size: 35,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    const Padding(
-                                      padding:
-                                          EdgeInsets.only(top: 10, bottom: 10),
-                                      child: Text(
-                                        "ARABALARIM",
-                                        style: TextStyle(
-                                          fontFamily: "Oswald",
-                                          fontSize: 30,
-                                        ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(top: 10, bottom: 10),
+                                    child: Text(
+                                      "ARABALARIM",
+                                      style: TextStyle(
+                                        fontFamily: "Oswald",
+                                        fontSize: 30,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 80,
-                                      height: 80,
-                                      child: FloatingActionButton(
-                                        backgroundColor: const Color.fromARGB(
-                                            255, 46, 154, 255),
-                                        shape: const CircleBorder(),
-                                        onPressed: () => git(context),
-                                        child: const Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          size: 35,
-                                          color: Colors.white,
-                                        ),
+                                  ),
+                                  SizedBox(
+                                    width: 80,
+                                    height: 80,
+                                    child: FloatingActionButton(
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 46, 154, 255),
+                                      shape: const CircleBorder(),
+                                      onPressed: () => git(context),
+                                      child: const Icon(
+                                        Icons.arrow_forward_ios_rounded,
+                                        size: 35,
+                                        color: Colors.white,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

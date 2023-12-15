@@ -22,12 +22,9 @@ class ArabaState extends State<Araba> {
     );
   }
 
-  void modelSecildi() {
-    durum2 = true;
-  }
-
   bool durum1 = true;
   bool durum2 = false;
+
   Widget build(BuildContext context) {
     var marka = TextEditingController();
 
@@ -92,10 +89,9 @@ class ArabaState extends State<Araba> {
                               DropdownMenu(
                                 initialSelection: list.first,
                                 onSelected: (String? value) {
-                                  // This is called when the user selects an item.
                                   setState(() {
                                     dropDownValue1 = value!;
-                                    modelSecildi();
+                                    durum2 = true;
                                   });
                                 },
                                 dropdownMenuEntries: list
@@ -130,7 +126,6 @@ class ArabaState extends State<Araba> {
                               DropdownMenu(
                                 initialSelection: list.first,
                                 onSelected: (String? value) {
-                                  // This is called when the user selects an item.
                                   setState(() {
                                     dropDownValue2 = value!;
                                   });

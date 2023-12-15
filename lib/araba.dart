@@ -102,7 +102,10 @@ class ArabaState extends State<Araba> {
                                     .map<DropdownMenuEntry<String>>(
                                         (String value) {
                                   return DropdownMenuEntry<String>(
-                                      value: value, label: value);
+                                    value: value,
+                                    label: value,
+                                    enabled: durum1,
+                                  );
                                 }).toList(),
                               )
                             ],

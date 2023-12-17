@@ -87,7 +87,7 @@ class ArabaState extends State<Araba> {
                                 width: 33,
                               ),
                               DropdownMenu(
-                                initialSelection: list.first,
+                                initialSelection: "Model seçiniz",
                                 onSelected: (String? value) {
                                   setState(() {
                                     dropDownValue1 = value!;
@@ -124,7 +124,7 @@ class ArabaState extends State<Araba> {
                                 width: 30,
                               ),
                               DropdownMenu(
-                                initialSelection: list.first,
+                                initialSelection: "",
                                 onSelected: (String? value) {
                                   setState(() {
                                     dropDownValue2 = value!;

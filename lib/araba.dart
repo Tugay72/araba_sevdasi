@@ -11,8 +11,8 @@ class Araba extends StatefulWidget {
   Araba();
 }
 
-var dropDownValue1 = list.first;
-var dropDownValue2 = list.first;
+String? dropDownValue1;
+String? dropDownValue2;
 
 class ArabaState extends State<Araba> {
   void git(BuildContext context) {
@@ -22,9 +22,11 @@ class ArabaState extends State<Araba> {
     );
   }
 
-  bool durum1 = true;
-  bool durum2 = false;
+  bool durum1 = true; //marka seçildi
+  bool durum2 = false; //model seçildi
+  bool durum3 = false; //yıl seçildi
 
+  @override
   Widget build(BuildContext context) {
     var marka = TextEditingController();
 
@@ -128,6 +130,7 @@ class ArabaState extends State<Araba> {
                                 onSelected: (String? value) {
                                   setState(() {
                                     dropDownValue2 = value!;
+                                    durum3 = true;
                                   });
                                 },
                                 dropdownMenuEntries: list
@@ -168,7 +171,48 @@ class ArabaState extends State<Araba> {
                                       backgroundColor: const Color.fromARGB(
                                           255, 46, 154, 255),
                                       shape: const CircleBorder(),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        if (!(durum1 & durum2 & durum3)) {
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) => AlertDialog(
+                                              title: const Text(
+                                                "Hata!",
+                                                style: TextStyle(
+                                                  fontSize: 30,
+                                                  fontFamily: "Oswald",
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                              content: const Text(
+                                                "Marka, model ve üretim yılını seçiniz!",
+                                                style: TextStyle(
+                                                  fontSize: 22,
+                                                  fontFamily: "Oswald",
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
+                                                  child: const Text(
+                                                    "Tamam",
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontFamily: "Oswald",
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        } else {
+                                          //ekle
+                                        }
+                                      },
                                       child: const Icon(
                                         Icons.add,
                                         color: Colors.white,

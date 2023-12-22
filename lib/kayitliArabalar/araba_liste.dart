@@ -1,7 +1,8 @@
 import 'package:araba_sevdasi/kayitliArabalar/araba_class.dart';
 
-class arabaListe {
-  static List<arabaClass> arabaliste = [
-    arabaClass("Audi", "A8", 2012),
+class ArabaListe {
+  static List<ArabaClass> arabaliste = [
+    ArabaClass("Audi", "A8", 2012),
+    ArabaClass("Ford", "Focus", 2001),
   ];
 }

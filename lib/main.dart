@@ -2,7 +2,7 @@ import 'package:araba_sevdasi/anasayfa.dart';
 //import 'package:araba_sevdasi/giris.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/araba.dart';
-import 'package:araba_sevdasi/benzin.dart';
+import 'package:araba_sevdasi/yakit.dart';
 import 'package:araba_sevdasi/profil.dart';
 
 void main() {
@@ -56,7 +56,7 @@ class AnaMenuState extends State<AnaMenu> {
 
   List<Widget> pageListFunc() => [
         Anasayfa(),
-        Benzin(),
+        Yakit(),
         Araba(),
         Profil(
           indexDegistir: temaDegistir,

@@ -5,13 +5,13 @@ class arabaDondur extends StatelessWidget {
   arabaDondur();
   @override
   Widget build(BuildContext context) {
-    var liste = arabaListe.arabaliste;
+    var liste = ArabaListe.arabaliste;
     return SizedBox(
       child: ListView.builder(
         itemCount: liste.length,
         itemBuilder: (context, i) => ListTile(
           title: Text(
-            liste[i].marka + " " + liste[i].model,
+            "${liste[i].marka} ${liste[i].model}",
             style: const TextStyle(
               fontSize: 25,
               fontFamily: "Oswald",
@@ -26,7 +26,15 @@ class arabaDondur extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          onTap: () {},
+          trailing: TextButton(
+            child: const Icon(Icons.remove_circle_outline_rounded),
+            onPressed: () {
+              //silme işlevi eklenecek
+            },
+          ),
+          onTap: () {
+            //seçili arabanın özelliklerini ve istatistiklerini görüntüleyen sayfa eklenecek
+          },
         ),
       ),
     );

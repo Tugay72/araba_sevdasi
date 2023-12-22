@@ -1,7 +1,6 @@
-// ignore: camel_case_types
-class arabaClass {
+class ArabaClass {
   String marka;
   String model;
   int yil;
-  arabaClass(this.marka, this.model, this.yil);
+  ArabaClass(this.marka, this.model, this.yil);
 }

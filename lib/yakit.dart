@@ -2,8 +2,8 @@ import 'package:araba_sevdasi/YakitVeri/yakit_class.dart';
 import 'package:araba_sevdasi/YakitVeri/yakit_liste.dart';
 import 'package:flutter/material.dart';
 
-class Benzin extends StatelessWidget {
-  Benzin({super.key});
+class Yakit extends StatelessWidget {
+  Yakit({super.key});
   @override
   Widget build(BuildContext context) {
     List<yakitClass> liste = YakitListe.yakitListe;

@@ -119,7 +119,7 @@ class AnaMenuState extends State<AnaMenu> {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 51, 203, 255),
+          seedColor: Colors.blue,
           brightness: temaMod,
         ),
       ),

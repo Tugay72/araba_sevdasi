@@ -1,9 +1,9 @@
 import 'package:araba_sevdasi/anasayfa.dart';
-//import 'package:araba_sevdasi/giris.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/araba.dart';
 import 'package:araba_sevdasi/yakit.dart';
 import 'package:araba_sevdasi/profil.dart';
+//import 'package:araba_sevdasi/giris.dart';
 
 void main() {
   runApp(const Uygulama());

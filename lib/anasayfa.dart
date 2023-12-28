@@ -19,6 +19,7 @@ class AnasayfaState extends State<Anasayfa> {
           foregroundColor: Theme.of(context).colorScheme.background,
           backgroundColor: const Color.fromARGB(255, 254, 207, 0),
           title: TabBar(
+            //physics: const NeverScrollableScrollPhysics(),
             indicatorColor: Theme.of(context).colorScheme.background,
             dividerColor: const Color.fromARGB(255, 254, 207, 0),
             tabs: [

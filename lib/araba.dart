@@ -53,212 +53,197 @@ class ArabaState extends State<Araba> {
                     width: 500,
                     child: Column(
                       children: [
-                        //Araba marka
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16, bottom: 16),
-                          child: SizedBox(
-                            width: 350,
-                            child: TextField(
-                              controller: marka,
-                              decoration: const InputDecoration(
-                                hintText: "Araba markasını seçiniz",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.horizontal(
-                                    left: Radius.circular(20),
-                                    right: Radius.circular(20),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
 
-                        //Araba model
-                        Padding(
-                          padding: const EdgeInsets.only(left: 32, bottom: 16),
-                          child: Row(
-                            children: [
-                              const Text(
-                                "Araba Modeli  :",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontFamily: "Oswald",
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 33,
-                              ),
-                              DropdownMenu(
-                                initialSelection: "Model seçiniz",
-                                onSelected: (String? value) {
-                                  setState(() {
-                                    dropDownValue1 = value!;
-                                    durum2 = true;
-                                  });
-                                },
-                                dropdownMenuEntries: list
-                                    .map<DropdownMenuEntry<String>>(
-                                        (String value) {
-                                  return DropdownMenuEntry<String>(
-                                    value: value,
-                                    label: value,
-                                    enabled: durum1,
-                                  );
-                                }).toList(),
-                              )
-                            ],
-                          ),
-                        ),
-
-                        //Araba Yıl
-                        Padding(
-                          padding: const EdgeInsets.only(left: 32, bottom: 16),
-                          child: Row(
-                            children: [
-                              const Text(
-                                "Üretim Yılı      :",
-                                style: TextStyle(
-                                  fontFamily: "Oswald",
-                                  fontSize: 24,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 30,
-                              ),
-                              DropdownMenu(
-                                initialSelection: "",
-                                onSelected: (String? value) {
-                                  setState(() {
-                                    dropDownValue2 = value!;
-                                    durum3 = true;
-                                  });
-                                },
-                                dropdownMenuEntries: list
-                                    .map<DropdownMenuEntry<String>>(
-                                        (String value) {
-                                  return DropdownMenuEntry<String>(
-                                    value: value,
-                                    label: value,
-                                    enabled: durum2,
-                                  );
-                                }).toList(),
-                              )
-                            ],
-                          ),
-                        ),
-
-                        //Ekle tuşu (yuvarlak içine "+")
+                        // Araba Ekle
                         Row(
                           children: [
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  const Padding(
-                                    padding:
-                                        EdgeInsets.only(top: 10, bottom: 10),
-                                    child: Text(
-                                      "ARABA EKLE",
-                                      style: TextStyle(
-                                        fontFamily: "Oswald",
-                                        fontSize: 30,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 80,
-                                    height: 80,
-                                    child: FloatingActionButton(
-                                      backgroundColor: const Color.fromARGB(
-                                          255, 46, 154, 255),
-                                      shape: const CircleBorder(),
-                                      onPressed: () {
-                                        if (!(durum1 & durum2 & durum3)) {
-                                          showDialog(
-                                            context: context,
-                                            builder: (context) => AlertDialog(
-                                              title: const Text(
-                                                "Hata!",
-                                                style: TextStyle(
-                                                  fontSize: 30,
-                                                  fontFamily: "Oswald",
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                              content: const Text(
-                                                "Marka, model ve üretim yılını seçiniz!",
-                                                style: TextStyle(
-                                                  fontSize: 22,
-                                                  fontFamily: "Oswald",
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(context),
-                                                  child: const Text(
-                                                    "Tamam",
-                                                    style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontFamily: "Oswald",
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        } else {
-                                          //ekle
-                                        }
-                                      },
-                                      child: const Icon(
-                                        Icons.add,
-                                        color: Colors.white,
-                                        size: 35,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 36, left: 36),
+                              child: Text(
+                                "Araba Ekle",
+                                style: TextStyle(
+                                  fontFamily: "Oswald",
+                                  fontSize: 24,
+                                ),
                               ),
                             ),
-                            //Kayıtlı Arabalarım
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  const Padding(
-                                    padding:
-                                        EdgeInsets.only(top: 10, bottom: 10),
-                                    child: Text(
-                                      "ARABALARIM",
-                                      style: TextStyle(
-                                        fontFamily: "Oswald",
-                                        fontSize: 30,
+
+                            //Arabalarim
+                            Padding(
+                              padding: const EdgeInsets.only(top: 36,left: 64),
+                              child: SizedBox(
+                                width: 180,
+                                height: 48,
+                                child: TextButton(
+                                    onPressed: () => git(context),
+                                    child: const Row(children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          "Kayıtlı Arabalarım",
+                                          style: TextStyle(
+                                            fontFamily: "Oswald",
+                                            fontSize: 18,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 80,
-                                    height: 80,
-                                    child: FloatingActionButton(
-                                      backgroundColor: const Color.fromARGB(
-                                          255, 46, 154, 255),
-                                      shape: const CircleBorder(),
-                                      onPressed: () => git(context),
-                                      child: const Icon(
-                                        Icons.arrow_forward_ios_rounded,
-                                        size: 35,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.only(top: 4, left: 4),
+                                        child: Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          size: 16,
+                                        ),
+                                      )
+                                    ])),
                               ),
                             ),
                           ],
                         ),
-                      ],
+
+                        //Araba marka
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4, bottom: 16),
+                          child: SizedBox(
+                            width: 320,
+                            height: 60,
+                            child: TextField(
+                              controller: marka,
+                              decoration: const InputDecoration(
+                                labelText: "Araba markası",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.horizontal(
+                                    left: Radius.circular(4),
+                                    right: Radius.circular(4),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                
+                                //Araba model
+                                Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 36, bottom: 16),
+                                    child: DropdownMenu(
+                                      width: 320,
+                                      initialSelection: "Model seçiniz",
+                                      label: const Text("Araba Modeli"),
+                                      onSelected: (String? value) {
+                                        setState(() {
+                                          dropDownValue1 = value!;
+                                          durum2 = true;
+                                        });
+                                      },
+                                      dropdownMenuEntries: list
+                                          .map<DropdownMenuEntry<String>>(
+                                              (String value) {
+                                        return DropdownMenuEntry<String>(
+                                          value: value,
+                                          label: value,
+                                          enabled: durum1,
+                                        );
+                                      }).toList(),
+                                    )),
+
+                                //Araba Yıl
+                                Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 36, bottom: 16),
+                                    child: DropdownMenu(
+                                      width: 320,
+                                      initialSelection: "",
+                                      label: const Text("Üretim Yılı"),
+                                      onSelected: (String? value) {
+                                        setState(() {
+                                          dropDownValue2 = value!;
+                                          durum3 = true;
+                                        });
+                                      },
+                                      dropdownMenuEntries: list
+                                          .map<DropdownMenuEntry<String>>(
+                                              (String value) {
+                                        return DropdownMenuEntry<String>(
+                                          value: value,
+                                          label: value,
+                                          enabled: durum2,
+                                        );
+                                      }).toList(),
+                                    )),
+                              ],
+                            ),
+                          ],
+                        ),
+                        
+                        //Ekle tuşu (yuvarlak içine "+")
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 16, left: 16),
+                              child: SizedBox(
+                                width: 64,
+                                height: 64,
+                                child: FloatingActionButton(
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 46, 154, 255),
+                                  shape: const CircleBorder(),
+                                  onPressed: () {
+                                    if (!(durum1 & durum2 & durum3)) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                          title: const Text(
+                                            "Hata!",
+                                            style: TextStyle(
+                                              fontSize: 30,
+                                              fontFamily: "Oswald",
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          content: const Text(
+                                            "Marka, model ve üretim yılını seçiniz!",
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              fontFamily: "Oswald",
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: const Text(
+                                                "Tamam",
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontFamily: "Oswald",
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    } else {
+                                      //ekle
+                                    }
+                                  },
+                                  child: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                            )
+                            ],
                     ),
                   ),
                 ),

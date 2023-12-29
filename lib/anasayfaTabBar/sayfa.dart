@@ -84,13 +84,12 @@ class Sayfa extends StatelessWidget {
                         ),
                       ),
                     ),
-                    //İstatistikler
                   ],
                 ),
               ),
             ),
           ),
-          //İstatistik kısmı
+          //İstatistikler
           Padding(
             padding: const EdgeInsets.only(top: 5),
             child: Column(

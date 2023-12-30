@@ -40,7 +40,7 @@ class ArabaState extends State<Araba> {
             child: SizedBox(
               child: Padding(
                 padding: const EdgeInsets.only(left: 96),
-                child: Image.asset("assets/images/araba.png"),
+                child: Image.asset("assets/images/araba/araba.png"),
               ),
             ),
           ),

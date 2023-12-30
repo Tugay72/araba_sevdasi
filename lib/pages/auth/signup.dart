@@ -22,7 +22,7 @@ class SignUp extends StatelessWidget {
   void pushSignIn(BuildContext context) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,70 +32,78 @@ class SignUp extends StatelessWidget {
           image: DecorationImage(
             image: AssetImage("assets/images/auth/background.jpg"),
             fit: BoxFit.cover,
-            ),
           ),
+        ),
         child: SafeArea(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-        
-              // logo
+                // logo
                 // Icon(Icons.lock,
                 // size: 100,
                 // ),
-      
-                
-              // login
+
+                // login
                 const Text(
                   "Sign Up",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255),),
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ),
-              // text -> Welcome Back :)
-        
-                const SizedBox(height: 10,),
-        
+                // text -> Welcome Back :)
+
+                const SizedBox(
+                  height: 10,
+                ),
+
                 const Text(
                   'Come and join us',
                   style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-            
-              // username textField
-        
+                ),
+
+                // username textField
+
                 textfieldStructure(
                   controller: _emailController,
-                  hintText: 'Email', 
+                  hintText: 'Email',
                   obscureText: false,
-                  ),
-            
-              // password textField
-            
+                ),
+
+                // password textField
+
                 textfieldStructure(
                   controller: _passwordController,
-                  hintText: 'Password', 
+                  hintText: 'Password',
                   obscureText: true,
-                  ),
+                ),
 
-              // password textField agaşn
+                // password textField agaşn
 
                 textfieldStructure(
                   controller: _secondPasswordController,
-                  hintText: 'Password', 
+                  hintText: 'Password',
                   obscureText: true,
-                  ),
-        
-                const SizedBox(height: 20,),
-        
-              // sign in button
-                
+                ),
+
+                const SizedBox(
+                  height: 20,
+                ),
+
+                // sign in button
+
                 Buttons(
                   onTap: () => signUserUp(context),
-                ),  
-     
-                const SizedBox(height: 40,),
+                ),
 
-              // not a member? register now
-                
+                const SizedBox(
+                  height: 40,
+                ),
+
+                // not a member? register now
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -103,12 +111,13 @@ class SignUp extends StatelessWidget {
                       "Do you have already account?",
                       style: TextStyle(color: Colors.grey[400]),
                     ),
-                    const SizedBox(width: 5,),
-
+                    const SizedBox(
+                      width: 5,
+                    ),
                     GestureDetector(
                       onTap: () => pushSignIn(context),
                       child: const Text(
-                        'Signin now',
+                        'Sign in now',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -117,7 +126,6 @@ class SignUp extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),

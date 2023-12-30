@@ -36,7 +36,7 @@ class Profil extends StatelessWidget {
                 child: SizedBox(
                   height: 170,
                   width: 170,
-                  child: Image.asset("assets/images/emirhoca.png"),
+                  child: Image.asset("assets/images/profile/emirhoca.png"),
                 ),
               ),
             ),
@@ -125,7 +125,7 @@ class Profil extends StatelessWidget {
 
 
 /*
- Widget texts(String mainText, String description) {
+  Widget texts(String mainText, String description) {
     return Padding(
       padding: const EdgeInsets.only(left: 8),
       child: Column(
@@ -148,4 +148,4 @@ class Profil extends StatelessWidget {
       ),
     );
   }
-  */
+*/

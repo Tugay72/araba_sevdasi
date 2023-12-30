@@ -18,7 +18,7 @@ class Yakit extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ListTile(
-                  leading: Image.asset("assets/images/ShellLogo.png"),
+                  leading: Image.asset("assets/images/yakit/ShellLogo.png"),
                   title: Text(
                     liste[0].marka,
                     style: const TextStyle(
@@ -47,7 +47,7 @@ class Yakit extends StatelessWidget {
                 ListTile(
                   leading: Padding(
                     padding: const EdgeInsets.only(left: 23, right: 19),
-                    child: Image.asset("assets/images/PetrolOfisiLogo.png"),
+                    child: Image.asset("assets/images/yakit/PetrolOfisiLogo.png"),
                   ),
                   title: Text(
                     liste[1].marka,
@@ -77,7 +77,7 @@ class Yakit extends StatelessWidget {
                 ListTile(
                   leading: Container(
                     width: 98,
-                    child: Image.asset("assets/images/OpetLogo.png"),
+                    child: Image.asset("assets/images/yakit/OpetLogo.png"),
                   ),
                   title: Text(
                     liste[2].marka,
@@ -107,7 +107,7 @@ class Yakit extends StatelessWidget {
                 ListTile(
                   leading: SizedBox(
                     width: 97,
-                    child: Image.asset("assets/images/BPLogo.png"),
+                    child: Image.asset("assets/images/yakit/BPLogo.png"),
                   ),
                   title: Text(
                     liste[3].marka,
@@ -137,7 +137,7 @@ class Yakit extends StatelessWidget {
                 ListTile(
                   leading: SizedBox(
                     width: 97,
-                    child: Image.asset("assets/images/AygazLogo.png"),
+                    child: Image.asset("assets/images/yakit/AygazLogo.png"),
                   ),
                   title: Text(
                     liste[4].marka,

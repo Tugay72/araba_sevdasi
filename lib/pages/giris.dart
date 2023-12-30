@@ -26,7 +26,7 @@ class GirisEkrani extends StatelessWidget {
             height: 270,
             width: 350,
             child: Image.asset(
-              "assets/images/siyah_araba.png",
+              "assets/images/giris/siyah_araba.png",
               color: Colors.white,
             ),
           ),
@@ -93,7 +93,7 @@ class GirisEkrani extends StatelessWidget {
             child: Container(
               height: 300,
               child: Image.asset(
-                "assets/images/rotali_araba.png",
+                "assets/images/giris/rotali_araba.png",
                 color: Colors.white,
               ),
             ),

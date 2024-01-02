@@ -20,6 +20,7 @@ List<String> yilListesi = [];
 String? dropDownValue1;
 String? dropDownValue2;
 String? selectedMarka;
+String? selectedModel;
 
 class ArabaState extends State<Araba> {
   Future<void> _veriGetir() async {
@@ -80,6 +81,14 @@ class ArabaState extends State<Araba> {
     return arabaListesi
         .where((araba) => araba['marka'] == selectedMarka)
         .map((araba) => araba['model'] as String)
+        .toSet()
+        .toList();
+  }
+
+  List<String> filteredYilListesi() {
+    return arabaListesi
+        .where((araba) => araba['model'] == selectedModel)
+        .map((araba) => araba['uretimYil'].toString())
         .toSet()
         .toList();
   }
@@ -185,6 +194,8 @@ class ArabaState extends State<Araba> {
                                 onSelected: (String? value) {
                                   setState(() {
                                     selectedMarka = value;
+                                    selectedModel = null;
+                                    durum2 = false;
                                   });
                                 },
                               )
@@ -219,6 +230,7 @@ class ArabaState extends State<Araba> {
                                     onSelected: (String? value) {
                                       setState(() {
                                         dropDownValue1 = value!;
+                                        selectedModel = value;
                                         durum2 = true;
                                       });
                                     },
@@ -248,7 +260,7 @@ class ArabaState extends State<Araba> {
                                         durum3 = true;
                                       });
                                     },
-                                    dropdownMenuEntries: yilListesi
+                                    dropdownMenuEntries: filteredYilListesi()
                                         .map<DropdownMenuEntry<String>>(
                                             (String value) {
                                       return DropdownMenuEntry<String>(

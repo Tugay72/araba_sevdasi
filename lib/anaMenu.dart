@@ -2,7 +2,7 @@ import 'package:araba_sevdasi/pages/anasayfa.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/pages/araba.dart';
 import 'package:araba_sevdasi/pages/yakit.dart';
-import 'package:araba_sevdasi/pages/profil.dart'; 
+import 'package:araba_sevdasi/pages/profil.dart';
 
 class AnaMenu extends StatefulWidget {
   const AnaMenu({super.key});

@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'package:araba_sevdasi/kayitliArabalar/kayitli_arabalar.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:http/http.dart' as http;
 
 List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 // ignore: non_constant_identifier_names
@@ -12,10 +14,57 @@ class Araba extends StatefulWidget {
   const Araba({super.key});
 }
 
+List<Map<String, dynamic>> arabaListesi = [];
+List<String> markaListesi = [];
+List<String> modelListesi = [];
+List<String> yilListesi = [];
 String? dropDownValue1;
 String? dropDownValue2;
 
 class ArabaState extends State<Araba> {
+  Future<void> _veriGetir() async {
+    try {
+      final response = await http.get(Uri.parse(
+          'https://raw.githubusercontent.com/nazhhoglu/cars/main/cars.json'));
+
+      if (response.statusCode == 200) {
+        print('Alınan JSON Yanıtı: ${response.body}');
+        // JSON verisini çözümle
+        arabaListesi = List<Map<String, dynamic>>.from(
+          json.decode(response.body),
+        );
+
+        // Marka, model ve yıl listelerini oluştur
+        for (var araba in arabaListesi) {
+          var marka = araba['marka'];
+          var model = araba['model'];
+          var yil = araba['uretimYil'].toString();
+
+          if (!markaListesi.contains(marka)) {
+            markaListesi.add(marka);
+          }
+
+          if (!modelListesi.contains(model)) {
+            modelListesi.add(model);
+          }
+
+          if (!yilListesi.contains(yil)) {
+            yilListesi.add(yil);
+          }
+        }
+
+        // State güncelleme işlemi
+        setState(() {});
+      } else {
+        throw Exception(
+            'HTTP request failed with status: ${response.statusCode}');
+      }
+    } catch (e, stackTrace) {
+      print('Hata oluştu: $e');
+      print('Stack trace: $stackTrace');
+    }
+  }
+
   void git(BuildContext context) {
     Navigator.push(
       context,
@@ -30,6 +79,7 @@ class ArabaState extends State<Araba> {
   @override
   Widget build(BuildContext context) {
     var marka = TextEditingController();
+    _veriGetir();
 
     return Scaffold(
       body: Column(
@@ -134,6 +184,7 @@ class ArabaState extends State<Araba> {
                                   padding: const EdgeInsets.only(
                                       left: 36, bottom: 16),
                                   child: DropdownMenu(
+                                    menuHeight: 200,
                                     width: 320,
                                     label: const Text("Araba Modeli"),
                                     onSelected: (String? value) {
@@ -142,7 +193,7 @@ class ArabaState extends State<Araba> {
                                         durum2 = true;
                                       });
                                     },
-                                    dropdownMenuEntries: list
+                                    dropdownMenuEntries: modelListesi
                                         .map<DropdownMenuEntry<String>>(
                                             (String value) {
                                       return DropdownMenuEntry<String>(
@@ -159,6 +210,7 @@ class ArabaState extends State<Araba> {
                                   padding: const EdgeInsets.only(
                                       left: 36, bottom: 16),
                                   child: DropdownMenu(
+                                    menuHeight: 200,
                                     width: 320,
                                     label: const Text("Üretim Yılı"),
                                     onSelected: (String? value) {
@@ -167,7 +219,7 @@ class ArabaState extends State<Araba> {
                                         durum3 = true;
                                       });
                                     },
-                                    dropdownMenuEntries: list
+                                    dropdownMenuEntries: yilListesi
                                         .map<DropdownMenuEntry<String>>(
                                             (String value) {
                                       return DropdownMenuEntry<String>(

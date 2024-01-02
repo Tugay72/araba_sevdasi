@@ -7,7 +7,7 @@ void main() {
 
 class Uygulama extends StatefulWidget {
   const Uygulama({super.key});
- @override
+  @override
   State<Uygulama> createState() => UygulamaState();
 }
 
@@ -21,9 +21,8 @@ class UygulamaState extends State<Uygulama> {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: Login(),
     );
   }
 }
-

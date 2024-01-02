@@ -77,6 +77,7 @@ class ArabaState extends State<Araba> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var marka = TextEditingController();
     _veriGetir();
 

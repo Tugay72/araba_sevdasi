@@ -19,6 +19,7 @@ List<String> modelListesi = [];
 List<String> yilListesi = [];
 String? dropDownValue1;
 String? dropDownValue2;
+String? selectedMarka;
 
 class ArabaState extends State<Araba> {
   Future<void> _veriGetir() async {
@@ -74,6 +75,14 @@ class ArabaState extends State<Araba> {
   bool durum1 = true; //marka seçildi
   bool durum2 = false; //model seçildi
   bool durum3 = false; //yıl seçildi
+
+  List<String> filteredModelListesi() {
+    return arabaListesi
+        .where((araba) => araba['marka'] == selectedMarka)
+        .map((araba) => araba['model'] as String)
+        .toSet()
+        .toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -160,18 +169,24 @@ class ArabaState extends State<Araba> {
                               width: 320,
                               height: 60,
                               child: Autocomplete<String>(
-                                  optionsBuilder: (textEditingValue) {
-                                final searchTextLowerCase =
-                                    textEditingValue.text.toLowerCase();
+                                optionsBuilder: (textEditingValue) {
+                                  final searchTextLowerCase =
+                                      textEditingValue.text.toLowerCase();
 
-                                return markaListesi
-                                    .where(
-                                      (entry) => entry
-                                          .toLowerCase()
-                                          .contains(searchTextLowerCase),
-                                    )
-                                    .toList();
-                              })
+                                  return markaListesi
+                                      .where(
+                                        (entry) => entry
+                                            .toLowerCase()
+                                            .contains(searchTextLowerCase),
+                                      )
+                                      .toList();
+                                },
+                                onSelected: (String? value) {
+                                  setState(() {
+                                    selectedMarka = value;
+                                  });
+                                },
+                              )
 
                               /*TextField(
                               controller: marka
@@ -206,7 +221,7 @@ class ArabaState extends State<Araba> {
                                         durum2 = true;
                                       });
                                     },
-                                    dropdownMenuEntries: modelListesi
+                                    dropdownMenuEntries: filteredModelListesi()
                                         .map<DropdownMenuEntry<String>>(
                                             (String value) {
                                       return DropdownMenuEntry<String>(

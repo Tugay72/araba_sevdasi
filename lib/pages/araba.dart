@@ -13,6 +13,7 @@ class Araba extends StatefulWidget {
   const Araba({super.key});
 }
 
+List<Map<String, dynamic>> kayitliArabaListesi = [];
 List<Map<String, dynamic>> arabaListesi = [];
 List<String> markaListesi = [];
 List<String> modelListesi = [];
@@ -324,7 +325,13 @@ class ArabaState extends State<Araba> {
                                     ),
                                   );
                                 } else {
-                                  //ekle
+                                  Map<String, dynamic> yeniArac = {
+                                    'marka': selectedMarka,
+                                    'model': selectedModel,
+                                    'uretimYil': int.parse(dropDownValue2!)
+                                  };
+                                  kayitliArabaListesi.add(yeniArac);
+                                  setState(() {});
                                 }
                               },
                               child: const Icon(

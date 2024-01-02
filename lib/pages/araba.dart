@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:http/http.dart' as http;
 
-List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 // ignore: non_constant_identifier_names
 IconData directions_car = const IconData(0xe1d7, fontFamily: 'MaterialIcons');
 

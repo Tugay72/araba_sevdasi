@@ -158,10 +158,24 @@ class ArabaState extends State<Araba> {
                         Padding(
                           padding: const EdgeInsets.only(top: 4, bottom: 16),
                           child: SizedBox(
-                            width: 320,
-                            height: 60,
-                            child: TextField(
-                              controller: marka,
+                              width: 320,
+                              height: 60,
+                              child: Autocomplete<String>(
+                                  optionsBuilder: (textEditingValue) {
+                                final searchTextLowerCase =
+                                    textEditingValue.text.toLowerCase();
+
+                                return markaListesi
+                                    .where(
+                                      (entry) => entry
+                                          .toLowerCase()
+                                          .contains(searchTextLowerCase),
+                                    )
+                                    .toList();
+                              })
+
+                              /*TextField(
+                              controller: marka
                               decoration: const InputDecoration(
                                 labelText: "Araba markası",
                                 border: OutlineInputBorder(
@@ -171,8 +185,8 @@ class ArabaState extends State<Araba> {
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
+                            ),*/
+                              ),
                         ),
 
                         Row(

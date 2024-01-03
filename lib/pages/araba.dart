@@ -74,7 +74,7 @@ class ArabaState extends State<Araba> {
     );
   }
 
-  bool durum1 = true; //marka seçildi
+  bool durum1 = false; //marka seçildi
   bool durum2 = false; //model seçildi
   bool durum3 = false; //yıl seçildi
 
@@ -196,7 +196,7 @@ class ArabaState extends State<Araba> {
                                   setState(() {
                                     selectedMarka = value;
                                     selectedModel = null;
-                                    durum2 = false;
+                                    durum1 = true;
                                   });
                                 },
                               )

@@ -1,4 +1,5 @@
 import 'package:araba_sevdasi/anaMenu.dart';
+import 'package:araba_sevdasi/pages/auth/kullanici_sozlesmesi.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/components/buttons.dart';
 import 'package:araba_sevdasi/components/textfieldStructure.dart';
@@ -6,9 +7,17 @@ import 'package:araba_sevdasi/components/square_tile.dart';
 import 'package:araba_sevdasi/pages/auth/signup.dart';
 
 // ignore: must_be_immutable
-class Login extends StatelessWidget {
-  Login({super.key});
 
+bool isChecked = false;
+bool durum = false;
+
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => LoginState();
+  Login({super.key});
+}
+
+class LoginState extends State<Login> {
   // text editing controllers
   final _emailController = TextEditingController(text: "emirozturk3@gmail.com");
   final _passwordController = TextEditingController(text: "123");
@@ -19,11 +28,12 @@ class Login extends StatelessWidget {
   void signUserIn(BuildContext context) {
     // DB ya da kullanici listesinden kontrol edilicek
     if (_emailController.text == "emirozturk3@gmail.com" &&
-        _passwordController.text == "123") {
+        _passwordController.text == "123" &&
+        durum) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const AnaMenu()));
     } else {
-      // Alert message eklenicek
+      // Alert message
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -125,25 +135,49 @@ class Login extends StatelessWidget {
 
                 // forgot password?
 
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50.0,
-                  ),
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Text(
-                      'Forgot Password?',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 189, 189, 189)),
-                    ),
-                  ]),
-                ),
-
-                SizedBox(
-                  height: 20,
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 20,
+                          child: Checkbox(
+                              activeColor: Colors.white,
+                              checkColor: Colors.black,
+                              fillColor:
+                                  const MaterialStatePropertyAll(Colors.white),
+                              value: isChecked,
+                              onChanged: (value) {
+                                durum = true;
+                                setState(() => isChecked = value!);
+                              }),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Sozlesme())),
+                          child: const Text(
+                            "Terms and Conditions",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 189, 189, 189)),
+                          ),
+                        ),
+                      ]),
                 ),
 
                 // sign in button
+                SizedBox(height: 20),
 
                 Buttons(
                   onTap: () => signUserIn(context),

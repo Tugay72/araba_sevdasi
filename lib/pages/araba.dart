@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:araba_sevdasi/kayitliArabalar/kayitli_arabalar.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+
 import 'package:http/http.dart' as http;
 
 // ignore: non_constant_identifier_names
@@ -30,7 +31,6 @@ class ArabaState extends State<Araba> {
           'https://raw.githubusercontent.com/nazhhoglu/cars/main/cars.json'));
 
       if (response.statusCode == 200) {
-        print('Alınan JSON Yanıtı: ${response.body}');
         // JSON verisini çözümle
         arabaListesi = List<Map<String, dynamic>>.from(
           json.decode(response.body),
@@ -325,13 +325,14 @@ class ArabaState extends State<Araba> {
                                     ),
                                   );
                                 } else {
-                                  Map<String, dynamic> yeniArac = {
-                                    'marka': selectedMarka,
-                                    'model': selectedModel,
-                                    'uretimYil': int.parse(dropDownValue2!)
-                                  };
-                                  kayitliArabaListesi.add(yeniArac);
-                                  setState(() {});
+                                  setState(() {
+                                    Map<String, dynamic> yeniArac = {
+                                      'marka': selectedMarka,
+                                      'model': selectedModel,
+                                      'uretimYil': int.parse(dropDownValue2!)
+                                    };
+                                    kayitliArabaListesi.add(yeniArac);
+                                  });
                                 }
                               },
                               child: const Icon(
@@ -381,7 +382,6 @@ class SmoothWavesPainter extends CustomPainter {
       double y = sin(x * waveFrequency) * waveAmplitude + size.height / 4;
       path.lineTo(x, y);
     }
-
     canvas.drawPath(path, paint);
   }
 

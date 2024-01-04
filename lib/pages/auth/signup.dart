@@ -80,7 +80,7 @@ class SignUp extends StatelessWidget {
                   obscureText: true,
                 ),
 
-                // password textField agaşn
+                // password textField again
 
                 textfieldStructure(
                   controller: _secondPasswordController,

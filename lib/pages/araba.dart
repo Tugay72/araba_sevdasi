@@ -330,8 +330,61 @@ class ArabaState extends State<Araba> {
                                     'model': selectedModel,
                                     'uretimYil': int.parse(dropDownValue2!)
                                   };
-                                  kayitliArabaListesi.add(yeniArac);
-                                  setState(() {});
+
+                                  bool aracListesindeVarMi(
+                                      Map<String, dynamic> yeniArac) {
+                                    for (var arac in kayitliArabaListesi) {
+                                      if (arac['marka'] == yeniArac['marka'] &&
+                                          arac['model'] == yeniArac['model'] &&
+                                          arac['uretimYil'] ==
+                                              yeniArac['uretimYil']) {
+                                        return true;
+                                      }
+                                    }
+                                    return false;
+                                  }
+
+                                  if (!aracListesindeVarMi(yeniArac)) {
+                                    setState(() {
+                                      kayitliArabaListesi.add(yeniArac);
+                                    });
+                                  } else {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                        title: const Text(
+                                          "Hata!",
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontFamily: "Oswald",
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        content: const Text(
+                                          "Bu araba zaten kayıtlı!",
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontFamily: "Oswald",
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context),
+                                            child: const Text(
+                                              "Tamam",
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontFamily: "Oswald",
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }
                                 }
                               },
                               child: const Icon(

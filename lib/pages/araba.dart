@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:araba_sevdasi/kayitliArabalar/kayitli_arabalar.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
-
 import 'package:http/http.dart' as http;
 
 // ignore: non_constant_identifier_names
@@ -31,6 +30,7 @@ class ArabaState extends State<Araba> {
           'https://raw.githubusercontent.com/nazhhoglu/cars/main/cars.json'));
 
       if (response.statusCode == 200) {
+        print('Alınan JSON Yanıtı: ${response.body}');
         // JSON verisini çözümle
         arabaListesi = List<Map<String, dynamic>>.from(
           json.decode(response.body),
@@ -74,7 +74,7 @@ class ArabaState extends State<Araba> {
     );
   }
 
-  bool durum1 = false; //marka seçildi
+  bool durum1 = true; //marka seçildi
   bool durum2 = false; //model seçildi
   bool durum3 = false; //yıl seçildi
 
@@ -196,7 +196,7 @@ class ArabaState extends State<Araba> {
                                   setState(() {
                                     selectedMarka = value;
                                     selectedModel = null;
-                                    durum1 = true;
+                                    durum2 = false;
                                   });
                                 },
                               )
@@ -325,14 +325,66 @@ class ArabaState extends State<Araba> {
                                     ),
                                   );
                                 } else {
-                                  setState(() {
-                                    Map<String, dynamic> yeniArac = {
-                                      'marka': selectedMarka,
-                                      'model': selectedModel,
-                                      'uretimYil': int.parse(dropDownValue2!)
-                                    };
-                                    kayitliArabaListesi.add(yeniArac);
-                                  });
+                                  Map<String, dynamic> yeniArac = {
+                                    'marka': selectedMarka,
+                                    'model': selectedModel,
+                                    'uretimYil': int.parse(dropDownValue2!)
+                                  };
+
+                                  bool aracListesindeVarMi(
+                                      Map<String, dynamic> yeniArac) {
+                                    for (var arac in kayitliArabaListesi) {
+                                      if (arac['marka'] == yeniArac['marka'] &&
+                                          arac['model'] == yeniArac['model'] &&
+                                          arac['uretimYil'] ==
+                                              yeniArac['uretimYil']) {
+                                        return true;
+                                      }
+                                    }
+                                    return false;
+                                  }
+
+                                  if (!aracListesindeVarMi(yeniArac)) {
+                                    setState(() {
+                                      kayitliArabaListesi.add(yeniArac);
+                                    });
+                                  } else {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                        title: const Text(
+                                          "Hata!",
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontFamily: "Oswald",
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        content: const Text(
+                                          "Bu araba zaten kayıtlı!",
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontFamily: "Oswald",
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context),
+                                            child: const Text(
+                                              "Tamam",
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontFamily: "Oswald",
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }
                                 }
                               },
                               child: const Icon(
@@ -382,6 +434,7 @@ class SmoothWavesPainter extends CustomPainter {
       double y = sin(x * waveFrequency) * waveAmplitude + size.height / 4;
       path.lineTo(x, y);
     }
+
     canvas.drawPath(path, paint);
   }
 

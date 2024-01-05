@@ -1,9 +1,12 @@
+import 'package:araba_sevdasi/anaMenu.dart';
 import 'package:araba_sevdasi/profilListe/profil_dondur.dart';
 import 'package:araba_sevdasi/profilListe/profil_liste.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 int lastToggleIndex = 1;
+double leftCarPosition = 0.0;
+double rightCarPosition = 0.0;
 
 // ignore: must_be_immutable
 class Profil extends StatelessWidget {
@@ -36,33 +39,48 @@ class Profil extends StatelessWidget {
                 child: SizedBox(
                   height: 170,
                   width: 170,
-                  child: Image.asset("assets/images/profile/emirhoca.png"),
+                  child: Image.asset("assets/images/profile/emirhoca1.png"),
                 ),
               ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(20)),
-                color: Theme.of(context).colorScheme.background,
-              ),
-              width: 431,
-              height: 500,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: ProfilDondur(liste),
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(20)),
+                    color: Theme.of(context).colorScheme.background,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 22, top: 20),
-                    child: themeButton(),
+                  width: 431,
+                  height: 500,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: ProfilDondur(liste),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 22, top: 20),
+                        child: themeButton(),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                AnimatedContainer(
+                  duration: Duration(seconds: 10),
+                  curve: Curves.easeInCirc,
+                  margin: EdgeInsets.only(
+                      top: 396, left: leftCarPosition, right: rightCarPosition),
+                  child: Image.asset(
+                    'assets/images/profile/emirhoca1.png', // Araba resminin dosya yolu
+                    width: 50,
+                    height: 50,
+                  ),
+                ),
+              ],
             ),
           )
         ],
@@ -115,6 +133,13 @@ class Profil extends StatelessWidget {
                 lastToggleIndex = index!;
               }
               indexDegistir(index);
+              if (index == 1) {
+                leftCarPosition = 320.0;
+                rightCarPosition = 0.0;
+              } else {
+                leftCarPosition = 0.0;
+                rightCarPosition = 100.0;
+              }
             },
           ),
         ),

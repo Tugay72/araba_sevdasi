@@ -3,17 +3,26 @@ import 'package:araba_sevdasi/pages/auth/kullanici_sozlesmesi.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/components/buttons.dart';
 import 'package:araba_sevdasi/components/textfieldStructure.dart';
-import 'package:araba_sevdasi/components/square_tile.dart';
 import 'package:araba_sevdasi/pages/auth/signup.dart';
+//import 'package:araba_sevdasi/components/square_tile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 
 bool isChecked = false;
 
+final Uri _url = Uri.parse('https://www.facebook.com/emirozturk');
+
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+
 class Login extends StatefulWidget {
   @override
   State<Login> createState() => LoginState();
-  Login({super.key});
+  const Login({super.key});
 }
 
 class LoginState extends State<Login> {
@@ -107,7 +116,7 @@ class LoginState extends State<Login> {
                 ),
                 // text -> Welcome Back :)
 
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
 
@@ -163,25 +172,50 @@ class LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 189, 189, 189)),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: TextButton(
+                            child: const Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            onPressed: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                        content: const Text(
+                                          "unutmasaydın",
+                                          style: TextStyle(
+                                            color: Color.fromARGB(
+                                                223, 201, 29, 231),
+                                            fontSize: 35,
+                                            fontFamily: "Oswald",
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: const Text("Geri Dön:'(")),
+                                        ],
+                                      ));
+                            },
                           ),
                         ),
                       ]),
                 ),
 
                 // sign in button
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 Buttons(
                   onTap: () => signUserIn(context),
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
 
@@ -214,24 +248,31 @@ class LoginState extends State<Login> {
                   ),
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
 
                 // google + xPlatform
 
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquareTile(imagePath: 'assets/images/auth/google.png'),
-                    SizedBox(
-                      width: 30,
+                    FloatingActionButton(
+                      //RENGİ TEKTE TUTTURDUM (WRITTEN BY MOUSTAFA MOUSTAFA)
+                      backgroundColor: const Color.fromARGB(255, 51, 116, 255),
+                      onPressed: _launchUrl,
+                      child: SizedBox(
+                        height: 60,
+                        child: Image.asset('assets/images/auth/facebook.png'),
+                      ),
                     ),
-                    SquareTile(imagePath: 'assets/images/auth/facebook.png'),
+
+                    //assets/images/auth/google.png
+                    //imagePath: 'assets/images/auth/facebook.png'
                   ],
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
 

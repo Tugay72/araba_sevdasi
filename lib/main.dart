@@ -22,7 +22,7 @@ class UygulamaState extends State<Uygulama> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      home: Login(), //Animasyon()
     );
   }
 }

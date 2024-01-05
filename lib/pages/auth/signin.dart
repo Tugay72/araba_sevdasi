@@ -9,7 +9,6 @@ import 'package:araba_sevdasi/pages/auth/signup.dart';
 // ignore: must_be_immutable
 
 bool isChecked = false;
-bool durum = false;
 
 class Login extends StatefulWidget {
   @override
@@ -29,7 +28,7 @@ class LoginState extends State<Login> {
     // DB ya da kullanici listesinden kontrol edilicek
     if (_emailController.text == "emirozturk3@gmail.com" &&
         _passwordController.text == "123" &&
-        durum) {
+        isChecked) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const AnaMenu()));
     } else {
@@ -149,7 +148,6 @@ class LoginState extends State<Login> {
                                   const MaterialStatePropertyAll(Colors.white),
                               value: isChecked,
                               onChanged: (value) {
-                                durum = true;
                                 setState(() => isChecked = value!);
                               }),
                         ),

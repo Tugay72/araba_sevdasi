@@ -1,5 +1,3 @@
-import 'package:araba_sevdasi/profilListe/profil_yapisi.dart';
-
 class YolculuklarListe {
   static List<String> yolculuklarListe = [
     ("Hogwarts... İstanbul"),

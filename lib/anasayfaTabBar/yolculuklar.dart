@@ -1,6 +1,7 @@
 import 'package:araba_sevdasi/anasayfaTabBar/yolculuklar_liste.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Yolculuklar extends StatelessWidget {
   Yolculuklar({super.key});
   var liste = YolculuklarListe.yolculuklarListe;

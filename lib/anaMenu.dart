@@ -52,7 +52,7 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 254, 207, 0),
+              backgroundColor: Color.fromARGB(255, 255, 193, 40),
               icon: Icon(Icons.home_rounded),
               label: "Ana Sayfa",
             ),

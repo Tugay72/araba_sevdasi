@@ -21,63 +21,56 @@ class Sayfa extends StatelessWidget {
       body: Column(
         children: [
           //Harita görseli
-          Container(
-            color: Colors.black,
-            child: const SizedBox(
-              height: 200,
-              width: 393,
-              child: Center(
-                child: Text(
-                  "Buraya harita fotoğrafı gelecek",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
+          const SizedBox(
+            width: 390,
+            child: Center(
+              child: Image(
+                image: AssetImage("assets/images/anasayfa/map.jpeg"),
               ),
             ),
           ),
           //Yolculuğa başla tuşunun olduğu kısım
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 48),
             child: SizedBox(
               height: 160,
-              width: 370,
+              width: 360,
               child: Card(
                 surfaceTintColor: Colors.blueGrey.shade400,
-                shadowColor: Colors.grey,
+                shadowColor: const Color.fromARGB(255, 255, 193, 40),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)),
+                    borderRadius: BorderRadius.circular(50)),
                 child: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
                       child: Text(
                         "Happy Fuel'a Hoşgeldin!",
                         style: TextStyle(
-                          fontSize: 37,
+                          fontSize: 32,
                           fontFamily: "Oswald",
                           fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 254, 207, 0),
+                          color: Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: SizedBox(
-                        width: 270,
+                        width: 240,
                         child: TextButton(
                           style: const ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(255, 254, 207, 0),
+                              Color.fromARGB(255, 255, 193, 40),
                             ),
                           ),
-                          child: Text(
-                            "YOLCULUĞA BAŞLA",
+                          child: const Text(
+                            "Yolculuğa Başla",
                             style: TextStyle(
-                              fontSize: 26,
+                              fontSize: 24,
                               fontFamily: "Oswald",
                               fontWeight: FontWeight.w400,
-                              color: Theme.of(context).colorScheme.background,
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
                           ),
                           onPressed: () => git(context),
@@ -91,54 +84,59 @@ class Sayfa extends StatelessWidget {
           ),
           //İstatistikler
           Padding(
-            padding: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(top: 64),
             child: Column(
               children: [
-                const Text(
-                  "İSTATİSTİKLERİN",
+                Text(
+                  "İstatistiklerin",
                   style: TextStyle(
-                    fontSize: 26,
+                    fontSize: 24,
                     fontFamily: "Oswald",
                     fontWeight: FontWeight.w400,
-                    color: Color.fromARGB(255, 254, 207, 0),
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
                 Row(
                   children: [
                     //Yapılan yolculuk
                     Padding(
-                      padding: const EdgeInsets.only(left: 6),
+                      padding: const EdgeInsets.only(top: 8, left: 6),
                       child: Container(
-                        height: 187,
+                        height: 100,
                         width: 120,
                         decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 254, 207, 0),
+                          color: Color.fromARGB(255, 255, 193, 40),
                           borderRadius: BorderRadiusDirectional.vertical(
-                            top: Radius.circular(70),
-                            bottom: Radius.circular(70),
+                            top: Radius.circular(10),
+                            bottom: Radius.circular(10),
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
+                          padding: const EdgeInsets.only(top: 4),
                           child: Column(
                             children: [
-                              Text(
-                                yolculuk.toString(),
-                                style: const TextStyle(
-                                  fontSize: 26,
-                                  fontFamily: "Oswald",
-                                  fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 221, 75, 26),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 48, bottom: 24),
+                                child: Text(
+                                  "Yolculuk",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: "Oswald",
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                  ),
                                 ),
                               ),
                               Text(
-                                "YOLCUL\n    UK",
-                                style: TextStyle(
-                                  fontSize: 26,
+                                yolculuk.toString(),
+                                style: const TextStyle(
+                                  fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color:
-                                      Theme.of(context).colorScheme.background,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
                               ),
                             ],
@@ -148,38 +146,43 @@ class Sayfa extends StatelessWidget {
                     ),
                     //Gidilen yol (KM)
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(top: 8, left: 10),
                       child: Container(
-                        height: 187,
+                        height: 100,
                         width: 120,
                         decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 254, 207, 0),
+                          color: Color.fromARGB(255, 255, 193, 40),
                           borderRadius: BorderRadiusDirectional.vertical(
-                            top: Radius.circular(70),
-                            bottom: Radius.circular(70),
+                            top: Radius.circular(10),
+                            bottom: Radius.circular(10),
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
+                          padding: const EdgeInsets.only(top: 4),
                           child: Column(
                             children: [
-                              Text(
-                                "${yol.toString()}\nKM",
-                                style: const TextStyle(
-                                  fontSize: 26,
-                                  fontFamily: "Oswald",
-                                  fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 221, 75, 26),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 80, bottom: 24),
+                                child: Text(
+                                  "Yol",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: "Oswald",
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                  ),
                                 ),
                               ),
                               Text(
-                                "YOL",
-                                style: TextStyle(
-                                  fontSize: 26,
+                                "${yol.toString()} KM",
+                                style: const TextStyle(
+                                  fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color:
-                                      Theme.of(context).colorScheme.background,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
                               ),
                             ],
@@ -189,40 +192,45 @@ class Sayfa extends StatelessWidget {
                     ),
                     //Harcanan yakıt(L)
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(top: 8, left: 10),
                       child: Container(
-                        height: 187,
+                        height: 100,
                         width: 120,
                         decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 254, 207, 0),
+                          color: Color.fromARGB(255, 255, 193, 40),
                           borderRadius: BorderRadiusDirectional.vertical(
-                            top: Radius.circular(70),
-                            bottom: Radius.circular(70),
+                            top: Radius.circular(10),
+                            bottom: Radius.circular(10),
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
+                          padding: const EdgeInsets.only(top: 4),
                           child: Column(
                             children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 72, bottom: 24),
+                                child: Text(
+                                  "Yakıt",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: "Oswald",
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                  ),
+                                ),
+                              ),
                               Text(
-                                "${yakit.toString()}\n L",
+                                "${yakit.toString()} L",
                                 style: const TextStyle(
-                                  fontSize: 26,
+                                  fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 221, 75, 26),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
-                              ),
-                              Text(
-                                "YAKIT",
-                                style: TextStyle(
-                                  fontSize: 26,
-                                  fontFamily: "Oswald",
-                                  fontWeight: FontWeight.w400,
-                                  color:
-                                      Theme.of(context).colorScheme.background,
-                                ),
-                              ),
+                              )
                             ],
                           ),
                         ),

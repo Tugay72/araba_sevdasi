@@ -69,6 +69,7 @@ flutter:
     - assets/images/profile/
     - assets/images/yakit/
     - assets/images/auth/
+    - assets/images/anasayfa/
     - assets/dosya/dosya.txt
    #  - assets/fonts/
 

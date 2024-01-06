@@ -1,8 +1,8 @@
 import 'package:araba_sevdasi/profilListe/duzenle.dart';
-import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
+//import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
 import 'package:araba_sevdasi/profilListe/profil_class.dart';
 import 'package:araba_sevdasi/profilListe/profil_dondur.dart';
-import 'package:araba_sevdasi/profilListe/profil_yapisi.dart';
+//import 'package:araba_sevdasi/profilListe/profil_yapisi.dart';
 
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';

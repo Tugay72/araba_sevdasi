@@ -50,7 +50,8 @@ class Sayfa extends StatelessWidget {
                           fontSize: 32,
                           fontFamily: "Oswald",
                           fontWeight: FontWeight.w400,
-                          color: Theme.of(context).colorScheme.onPrimaryContainer,
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
                     ),
@@ -84,7 +85,7 @@ class Sayfa extends StatelessWidget {
           ),
           //İstatistikler
           Padding(
-            padding: const EdgeInsets.only(top: 64),
+            padding: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
                 Text(
@@ -132,11 +133,12 @@ class Sayfa extends StatelessWidget {
                               ),
                               Text(
                                 yolculuk.toString(),
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color:
+                                      Theme.of(context).colorScheme.background,
                                 ),
                               ),
                             ],
@@ -178,11 +180,12 @@ class Sayfa extends StatelessWidget {
                               ),
                               Text(
                                 "${yol.toString()} KM",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color:
+                                      Theme.of(context).colorScheme.background,
                                 ),
                               ),
                             ],
@@ -224,11 +227,12 @@ class Sayfa extends StatelessWidget {
                               ),
                               Text(
                                 "${yakit.toString()} L",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Oswald",
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  color:
+                                      Theme.of(context).colorScheme.background,
                                 ),
                               )
                             ],

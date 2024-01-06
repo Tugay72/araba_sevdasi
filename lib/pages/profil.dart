@@ -1,5 +1,9 @@
+import 'package:araba_sevdasi/profilListe/duzenle.dart';
+import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
+import 'package:araba_sevdasi/profilListe/profil_class.dart';
 import 'package:araba_sevdasi/profilListe/profil_dondur.dart';
-import 'package:araba_sevdasi/profilListe/profil_liste.dart';
+import 'package:araba_sevdasi/profilListe/profil_yapisi.dart';
+
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -13,7 +17,7 @@ class Profil extends StatelessWidget {
 
   // ignore: prefer_typing_uninitialized_variables
   var indexDegistir;
-  var liste = ProfilListe.profilListe;
+  List<ProfilClass> liste = [];
 
   @override
   Widget build(BuildContext context) {
@@ -55,28 +59,55 @@ class Profil extends StatelessWidget {
                   width: 431,
                   height: 500,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: ProfilDondur(liste),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: ProfilDondur(liste),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Duzenle(),
+                                ),
+                              );
+                            },
+                            child: const Row(
+                              children: [
+                                Text(
+                                  "Düzenle ",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontFamily: "Oswald",
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Icon(Icons.edit),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 22, top: 20),
+                        padding: const EdgeInsets.only(left: 0, top: 20),
                         child: themeButton(),
                       ),
                     ],
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: 10),
+                  duration: const Duration(seconds: 10),
                   curve: Curves.easeInCirc,
                   margin: EdgeInsets.only(
-                      top: 396, left: leftCarPosition, right: rightCarPosition),
+                      top: 406, left: leftCarPosition, right: rightCarPosition),
                   child: Image.asset(
-                    'assets/images/profile/emirhoca1.png', // Araba resminin dosya yolu
-                    width: 50,
-                    height: 50,
+                    'assets/images/profile/kirmiziaraba.png', // Araba resminin dosya yolu
+                    width: 100,
+                    height: 100,
                   ),
                 ),
               ],
@@ -89,16 +120,8 @@ class Profil extends StatelessWidget {
 
   Widget themeButton() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Tema:",
-          style: TextStyle(
-            fontSize: 20,
-            fontFamily: "Oswald",
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        const SizedBox(width: 180),
         Padding(
           padding: const EdgeInsets.only(top: 0, right: 0, left: 0, bottom: 0),
           child: ToggleSwitch(
@@ -133,7 +156,7 @@ class Profil extends StatelessWidget {
               }
               indexDegistir(index);
               if (index == 1) {
-                leftCarPosition = 320.0;
+                leftCarPosition = 300.0;
                 rightCarPosition = 0.0;
               } else {
                 leftCarPosition = 0.0;

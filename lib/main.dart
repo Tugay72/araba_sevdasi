@@ -12,13 +12,6 @@ class Uygulama extends StatefulWidget {
 }
 
 class UygulamaState extends State<Uygulama> {
-  void basla(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Login()),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

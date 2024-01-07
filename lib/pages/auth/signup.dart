@@ -96,6 +96,7 @@ class SignUp extends StatelessWidget {
 
                 Buttons(
                   onTap: () => signUserUp(context),
+                  yazi: "Sign In",
                 ),
 
                 const SizedBox(

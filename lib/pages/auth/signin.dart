@@ -42,40 +42,77 @@ class LoginState extends State<Login> {
           context, MaterialPageRoute(builder: (context) => const AnaMenu()));
     } else {
       // Alert message
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text(
-            "Hata!",
-            style: TextStyle(
-              fontSize: 30,
-              fontFamily: "Oswald",
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          content: const Text(
-            "E-mail veya şifre yanlış!",
-            style: TextStyle(
-              fontSize: 22,
-              fontFamily: "Oswald",
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text(
-                "Tamam",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: "Oswald",
-                  fontWeight: FontWeight.w400,
-                ),
+      if (isChecked == false) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text(
+              "Hata!",
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: "Oswald",
+                fontWeight: FontWeight.w400,
               ),
             ),
-          ],
-        ),
-      );
+            content: const Text(
+              "Kullanıcı sözleşmesini kabul ediniz!",
+              style: TextStyle(
+                fontSize: 22,
+                fontFamily: "Oswald",
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  "Tamam",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Oswald",
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      } else {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text(
+              "Hata!",
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: "Oswald",
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            content: const Text(
+              "E-mail veya şifre yanlış!",
+              style: TextStyle(
+                fontSize: 22,
+                fontFamily: "Oswald",
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  "Tamam",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Oswald",
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
     }
   }
 
@@ -107,7 +144,7 @@ class LoginState extends State<Login> {
 
                 // login
                 const Text(
-                  "Sign in",
+                  "Login",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -208,11 +245,12 @@ class LoginState extends State<Login> {
                       ]),
                 ),
 
-                // sign in button
+                // Login in button
                 const SizedBox(height: 20),
 
                 Buttons(
                   onTap: () => signUserIn(context),
+                  yazi: "Login",
                 ),
 
                 const SizedBox(

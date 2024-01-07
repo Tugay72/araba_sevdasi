@@ -59,36 +59,46 @@ class Profil extends StatelessWidget {
                   width: 431,
                   height: 500,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: ProfilDondur(liste),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: ProfilDondur(liste),
+                              ),
+                            ],
                           ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Duzenle(),
+                          Column(
+                            children: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Duzenle(),
+                                    ),
+                                  );
+                                },
+                                child: const Row(
+                                  children: [
+                                    Text(
+                                      "Düzenle ",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontFamily: "Oswald",
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Icon(Icons.edit),
+                                  ],
                                 ),
-                              );
-                            },
-                            child: const Row(
-                              children: [
-                                Text(
-                                  "Düzenle ",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: "Oswald",
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Icon(Icons.edit),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(
+                                height: 205,
+                              ),
+                            ],
                           ),
                         ],
                       ),

@@ -51,7 +51,7 @@ class ProfilDondur extends StatelessWidget {
             title: Text(
               listeDondur(index),
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 21,
                 fontFamily: "Oswald",
                 fontWeight: FontWeight.w400,
               ),
@@ -59,7 +59,7 @@ class ProfilDondur extends StatelessWidget {
             subtitle: Text(
               baslik[index],
               style: const TextStyle(
-                fontSize: 14,
+                fontSize: 17,
                 fontFamily: "Oswald",
                 fontWeight: FontWeight.w400,
               ),

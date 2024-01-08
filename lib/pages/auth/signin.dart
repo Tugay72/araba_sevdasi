@@ -27,15 +27,16 @@ class Login extends StatefulWidget {
 
 class LoginState extends State<Login> {
   // text editing controllers
-  final _emailController = TextEditingController(text: "emirozturk3@gmail.com");
+  final _emailController = TextEditingController(text: "emirozturk@gmail.com");
   final _passwordController = TextEditingController(text: "123");
-
+  //final _emailController = TextEditingController();
+  //final _passwordController = TextEditingController();
   // initialize the emailController
 
   // sign user in method
   void signUserIn(BuildContext context) {
     // DB ya da kullanici listesinden kontrol edilicek
-    if (_emailController.text == "emirozturk3@gmail.com" &&
+    if (_emailController.text == "emirozturk@gmail.com" &&
         _passwordController.text == "123" &&
         isChecked) {
       Navigator.push(

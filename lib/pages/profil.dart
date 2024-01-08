@@ -1,10 +1,7 @@
 import 'package:araba_sevdasi/profilListe/duzenle.dart';
 import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
-//import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
 import 'package:araba_sevdasi/profilListe/profil_class.dart';
 import 'package:araba_sevdasi/profilListe/profil_dondur.dart';
-//import 'package:araba_sevdasi/profilListe/profil_yapisi.dart';
-
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -23,7 +20,7 @@ class Profil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 110, 0, 132),
+      backgroundColor: const Color.fromARGB(255, 255, 190, 37),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -34,9 +31,11 @@ class Profil extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color.fromARGB(255, 6, 2, 210),
-                    Color.fromARGB(255, 110, 0, 132),
+                    Color.fromARGB(255, 255, 0, 0),
+                    Color.fromARGB(255, 255, 190, 37),
                   ],
+                  //Color.fromARGB(255, 6, 2, 210),
+                  //Color.fromARGB(255, 110, 0, 132),Color.fromARGB(255, 255, 81, 0),
                 ),
               ),
               child: Center(
@@ -97,7 +96,7 @@ class Profil extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                height: 205,
+                                height: 210,
                               ),
                             ],
                           ),

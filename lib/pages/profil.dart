@@ -1,4 +1,5 @@
 import 'package:araba_sevdasi/profilListe/duzenle.dart';
+import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
 //import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
 import 'package:araba_sevdasi/profilListe/profil_class.dart';
 import 'package:araba_sevdasi/profilListe/profil_dondur.dart';
@@ -17,7 +18,7 @@ class Profil extends StatelessWidget {
 
   // ignore: prefer_typing_uninitialized_variables
   var indexDegistir;
-  List<ProfilClass> liste = [];
+  List<ProfilClass> liste = KullaniciListesi.kullaniciListesi;
 
   @override
   Widget build(BuildContext context) {

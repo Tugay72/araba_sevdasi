@@ -8,9 +8,16 @@ class ProfilDondur extends StatelessWidget {
   List<ProfilClass> kliste = KullaniciListesi.kullaniciListesi;
 
   String listeDondur(index) {
+    //mail
     if (kliste.isEmpty) {
       return "boş";
     }
+
+    // for(var eleman in kliste){
+    //   if(eleman.email == mail){
+
+    //   }
+    // }
 
     if (index >= 0 && index < baslik.length) {
       ProfilClass kullanici = kliste[0];

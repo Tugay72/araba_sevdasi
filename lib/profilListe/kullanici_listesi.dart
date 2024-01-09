@@ -8,6 +8,8 @@ class KullaniciListesi {
       "Öztürk",
       "Zonguldak",
       "emirozturk@trakya.edu.tr",
+      "123",
+      1,
     ),
   ];
 }

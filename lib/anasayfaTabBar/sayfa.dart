@@ -1,4 +1,5 @@
 import 'package:araba_sevdasi/anasayfaTabBar/suruseBasla.dart';
+import 'package:araba_sevdasi/pages/anasayfa/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class Sayfa extends StatelessWidget {
@@ -7,7 +8,7 @@ class Sayfa extends StatelessWidget {
   void git(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SuruseBasla()),
+      MaterialPageRoute(builder: (context) => const MapScreen()),
     );
   }
 

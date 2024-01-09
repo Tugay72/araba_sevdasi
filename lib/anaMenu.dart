@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:araba_sevdasi/pages/anasayfa.dart';
+import 'package:araba_sevdasi/pages/anasayfa/anasayfa.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/pages/araba.dart';
 import 'package:araba_sevdasi/pages/yakit.dart';

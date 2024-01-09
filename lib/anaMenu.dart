@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:araba_sevdasi/pages/anasayfa.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/pages/araba.dart';
@@ -15,8 +16,8 @@ class AnaMenuState extends State<AnaMenu> {
   var suAnkiIndex = 0;
 
   List<Widget> pageListFunc() => [
-        Anasayfa(),
-        Yakit(),
+        const Anasayfa(),
+        const Yakit(),
         const Araba(),
         Profil(
           indexDegistir: temaDegistir,

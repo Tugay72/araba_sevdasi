@@ -242,25 +242,6 @@ class Sayfa extends StatelessWidget {
               ),
             ],
           ),
-
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 25),
-          //   child: Container(
-          //     color: Colors.black,
-          //     child: const SizedBox(
-          //       height: 211,
-          //       width: 393,
-          //       child: Center(
-          //         child: Text(
-          //           "Buraya İstatistikler kısmı gelecek",
-          //           style: TextStyle(
-          //             color: Colors.white,
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );

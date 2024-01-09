@@ -3,13 +3,13 @@ import 'package:araba_sevdasi/YakitVeri/yakit_liste.dart';
 import 'package:flutter/material.dart';
 
 class Yakit extends StatelessWidget {
-  Yakit({super.key});
+  const Yakit({super.key});
   @override
   Widget build(BuildContext context) {
     List<yakitClass> liste = YakitListe.yakitListe;
 
     return Padding(
-      padding: EdgeInsets.only(top: 30),
+      padding: const EdgeInsets.only(top: 30),
       child: Column(
         children: [
           Card(
@@ -47,7 +47,8 @@ class Yakit extends StatelessWidget {
                 ListTile(
                   leading: Padding(
                     padding: const EdgeInsets.only(left: 23, right: 19),
-                    child: Image.asset("assets/images/yakit/PetrolOfisiLogo.png"),
+                    child:
+                        Image.asset("assets/images/yakit/PetrolOfisiLogo.png"),
                   ),
                   title: Text(
                     liste[1].marka,
@@ -75,7 +76,7 @@ class Yakit extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ListTile(
-                  leading: Container(
+                  leading: SizedBox(
                     width: 98,
                     child: Image.asset("assets/images/yakit/OpetLogo.png"),
                   ),

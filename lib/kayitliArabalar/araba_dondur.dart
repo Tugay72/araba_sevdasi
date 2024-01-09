@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/pages/araba.dart';
 
+// ignore: camel_case_types
 class arabaDondur extends StatefulWidget {
-  arabaDondur();
+  const arabaDondur({super.key});
 
   @override
-  _arabaDondurState createState() => _arabaDondurState();
+  State<arabaDondur> createState() => _arabaDondurState();
 }
 
+// ignore: camel_case_types
 class _arabaDondurState extends State<arabaDondur> {
   void arabaSil(int index) {
     setState(() {

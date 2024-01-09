@@ -36,7 +36,7 @@ class ProfilDondur extends StatelessWidget {
     return "Bilgi Yok";
   }
 
-  ProfilDondur(this.kliste);
+  ProfilDondur(this.kliste, {super.key});
 
   @override
   Widget build(BuildContext context) {

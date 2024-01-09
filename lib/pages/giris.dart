@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class GirisEkrani extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final Function(BuildContext) basla;
-  GirisEkrani({required this.basla});
+  const GirisEkrani({super.key, required this.basla});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -90,7 +90,7 @@ class GirisEkrani extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: Container(
+            child: SizedBox(
               height: 300,
               child: Image.asset(
                 "assets/images/giris/rotali_araba.png",

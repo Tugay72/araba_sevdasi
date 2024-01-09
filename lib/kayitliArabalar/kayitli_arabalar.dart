@@ -21,18 +21,9 @@ class kayitliArabalarState extends State<kayitliArabalar> {
         backgroundColor: const Color.fromARGB(255, 46, 154, 255),
         foregroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
-      body: Center(
+      body: const Center(
         child: arabaDondur(),
       ),
     );
   }
 }
-
-/*
-ElevatedButton(
-  child: Text("Geri Dön"),
-  onPressed: () {
-    Navigator.pop(context);
-  },
-),
-*/

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class Anasayfa extends StatefulWidget {
   @override
   State<Anasayfa> createState() => AnasayfaState();
-  Anasayfa({super.key});
+  const Anasayfa({super.key});
 }
 
 // ignore: must_be_immutable
@@ -42,7 +42,7 @@ class AnasayfaState extends State<Anasayfa> {
         ),
         body: TabBarView(
           children: [
-            Sayfa(),
+            const Sayfa(),
             Yolculuklar(),
           ],
         ),

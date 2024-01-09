@@ -14,13 +14,15 @@ class SignUp extends StatelessWidget {
   // sign user in method
 
   void signUserUp(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
   }
 
   // method for route to singin page
 
   void pushSignIn(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
   }
 
   @override

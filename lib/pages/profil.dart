@@ -77,7 +77,7 @@ class Profil extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Duzenle(),
+                                      builder: (context) => const Duzenle(),
                                     ),
                                   );
                                 },

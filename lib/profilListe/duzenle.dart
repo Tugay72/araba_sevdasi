@@ -104,8 +104,12 @@ class DuzenleState extends State<Duzenle> {
                         foregroundColor: MaterialStatePropertyAll(Colors.white),
                       ),
                       onPressed: () {
-                        kaydet();
-                        Navigator.pop(context);
+                        setState(
+                          () {
+                            kaydet();
+                            Navigator.pop(context);
+                          },
+                        );
                       },
                       child: const Text(
                         "Kaydet",

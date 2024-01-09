@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Calculate extends StatefulWidget {
-
   final String distance;
 
   const Calculate({super.key, required this.distance});
@@ -11,15 +10,14 @@ class Calculate extends StatefulWidget {
 }
 
 class _CalculateState extends State<Calculate> {
-
-
-
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("cal")),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.yellow,
+        foregroundColor: Theme.of(context).colorScheme.background,
+      ),
+      body: const Center(child: Text("calculate")),
     );
   }
-
-  
 }

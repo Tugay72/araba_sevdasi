@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 
-
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
 
@@ -19,7 +18,7 @@ class MapScreenState extends State<MapScreen> {
   final Set<Marker> _markers = {};
   List<LatLng> markerLocations = [];
   Map<PolylineId, Polyline> polylines = {};
-  
+
   static const CameraPosition _edirneMerkez = CameraPosition(
     target: LatLng(41.6771, 26.5557),
     zoom: 14.4746,
@@ -27,38 +26,43 @@ class MapScreenState extends State<MapScreen> {
 
   String infoText = 'Choose the start point';
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-
-          GoogleMap(
-            mapType: MapType.hybrid,
-            initialCameraPosition: _edirneMerkez,
-            onMapCreated: (GoogleMapController controller) {
-              _controller.complete(controller);
-            },
-            onTap: _addMarker,
-            markers: _markers,
-            polylines: Set<Polyline>.of(polylines.values),
+      appBar: AppBar(
+        title: const Text(
+          "Google Maps",
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.w400,
           ),
-          
-          floatingActionButton: Padding(
-          padding: const EdgeInsets.only(right: 100),
-          child: FloatingActionButton.extended(
+        ),
+        backgroundColor: Colors.yellow,
+        foregroundColor: Theme.of(context).colorScheme.background,
+      ),
+      body: GoogleMap(
+        mapType: MapType.hybrid,
+        initialCameraPosition: _edirneMerkez,
+        onMapCreated: (GoogleMapController controller) {
+          _controller.complete(controller);
+        },
+        onTap: _addMarker,
+        markers: _markers,
+        polylines: Set<Polyline>.of(polylines.values),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 100),
+        child: FloatingActionButton.extended(
           onPressed: () {
-            if(markerLocations.length == 2) {
+            if (markerLocations.length == 2) {
               _calculateDistance(markerLocations[0], markerLocations[1]);
               pushCalculatePage(context);
             }
           },
           label: Text(infoText),
           icon: const Icon(Icons.car_crash_rounded),
-          ),
-          
-          ), 
+        ),
+      ),
     );
   }
 
@@ -70,17 +74,16 @@ class MapScreenState extends State<MapScreen> {
     setState(() {
       if (_markers.isEmpty) {
         _markers.add(Marker(
-        markerId: const MarkerId('origin'),
-        position: pos,
-      ));
-      markerLocations.add(pos);
-      }
-      else if(_markers.length == 1){
-         _markers.add(Marker(
-        markerId: const MarkerId('dest'),
-        position: pos,
-      ));
-      markerLocations.add(pos);
+          markerId: const MarkerId('origin'),
+          position: pos,
+        ));
+        markerLocations.add(pos);
+      } else if (_markers.length == 1) {
+        _markers.add(Marker(
+          markerId: const MarkerId('dest'),
+          position: pos,
+        ));
+        markerLocations.add(pos);
       }
 
       if (markerLocations.length == 1) {
@@ -99,11 +102,11 @@ class MapScreenState extends State<MapScreen> {
       pos2.latitude,
       pos2.longitude,
     );
-      infoText = distanceInMeters.toStringAsFixed(2);
+    infoText = distanceInMeters.toStringAsFixed(2);
   }
 
   void pushCalculatePage(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Calculate(distance: infoText)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => Calculate(distance: infoText)));
   }
-
 }

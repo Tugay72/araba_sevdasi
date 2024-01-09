@@ -37,6 +37,7 @@ dependencies:
   google_maps_flutter: ^2.5.1
   geolocator: ^10.1.0
   flutter_polyline_points: ^2.0.0
+  lottie: ^2.7.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -75,6 +76,7 @@ flutter:
     - assets/images/auth/
     - assets/images/anasayfa/
     - assets/dosya/dosya.txt
+    - assets/animation/
    #  - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see

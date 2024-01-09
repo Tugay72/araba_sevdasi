@@ -12,10 +12,12 @@ class Calculate extends StatefulWidget {
 
 class _CalculateState extends State<Calculate> {
 
+
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text("calculate")),
+      body: Center(child: Text("cal")),
     );
   }
 

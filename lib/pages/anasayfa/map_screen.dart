@@ -49,8 +49,10 @@ class MapScreenState extends State<MapScreen> {
           padding: const EdgeInsets.only(right: 100),
           child: FloatingActionButton.extended(
           onPressed: () {
-            if(markerLocations.length == 2)
-            pushCalculatePage(context);
+            if(markerLocations.length == 2) {
+              _calculateDistance(markerLocations[0], markerLocations[1]);
+              pushCalculatePage(context);
+            }
           },
           label: Text(infoText),
           icon: const Icon(Icons.car_crash_rounded),
@@ -97,9 +99,7 @@ class MapScreenState extends State<MapScreen> {
       pos2.latitude,
       pos2.longitude,
     );
-    setState(() {
       infoText = distanceInMeters.toStringAsFixed(2);
-    });
   }
 
   void pushCalculatePage(BuildContext context) {

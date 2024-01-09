@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Duzenle extends StatefulWidget {
   @override
   State<Duzenle> createState() => DuzenleState();
-  Duzenle();
+  const Duzenle({super.key});
 }
 
 var liste = KullaniciListesi.kullaniciListesi;
@@ -35,7 +35,7 @@ class DuzenleState extends State<Duzenle> {
               padding: const EdgeInsets.only(top: 40),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 240,
                     child: TextField(
                       controller: adController,
@@ -50,7 +50,7 @@ class DuzenleState extends State<Duzenle> {
                   const SizedBox(
                     height: 70,
                   ),
-                  Container(
+                  SizedBox(
                     width: 240,
                     child: TextField(
                       controller: soyAdController,
@@ -65,7 +65,7 @@ class DuzenleState extends State<Duzenle> {
                   const SizedBox(
                     height: 70,
                   ),
-                  Container(
+                  SizedBox(
                     width: 240,
                     child: TextField(
                       controller: sehirController,
@@ -80,7 +80,7 @@ class DuzenleState extends State<Duzenle> {
                   const SizedBox(
                     height: 70,
                   ),
-                  Container(
+                  SizedBox(
                     width: 240,
                     child: TextField(
                       controller: emailController,

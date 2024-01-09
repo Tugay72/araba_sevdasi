@@ -14,8 +14,8 @@ class Uygulama extends StatefulWidget {
 class UygulamaState extends State<Uygulama> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Login(), //Animasyon()
+    return const MaterialApp(
+      home: Login(),
     );
   }
 }

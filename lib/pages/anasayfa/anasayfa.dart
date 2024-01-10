@@ -42,7 +42,7 @@ class AnasayfaState extends State<Anasayfa> {
         ),
         body: TabBarView(
           children: [
-            const Sayfa(),
+            Sayfa(),
             Yolculuklar(),
           ],
         ),

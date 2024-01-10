@@ -18,6 +18,7 @@ List<Map<String, dynamic>> arabaListesi = [];
 List<String> markaListesi = [];
 List<String> modelListesi = [];
 List<String> yilListesi = [];
+List<double> miktarListe = [];
 String? dropDownValue1;
 String? dropDownValue2;
 String? selectedMarka;
@@ -40,6 +41,7 @@ class ArabaState extends State<Araba> {
         for (var araba in arabaListesi) {
           var marka = araba['marka'];
           var model = araba['model'];
+          var yakitMiktar = araba['kmBasina'];
           var yil = araba['uretimYil'].toString();
 
           if (!markaListesi.contains(marka)) {
@@ -52,6 +54,9 @@ class ArabaState extends State<Araba> {
 
           if (!yilListesi.contains(yil)) {
             yilListesi.add(yil);
+          }
+          if (!miktarListe.contains(yakitMiktar)) {
+            miktarListe.add(yakitMiktar);
           }
         }
 
@@ -90,6 +95,14 @@ class ArabaState extends State<Araba> {
     return arabaListesi
         .where((araba) => araba['model'] == selectedModel)
         .map((araba) => araba['uretimYil'].toString())
+        .toSet()
+        .toList();
+  }
+
+  List<double> filteredYakitMiktar() {
+    return miktarListe = arabaListesi
+        .where((araba) => araba['model'] == selectedModel)
+        .map((araba) => araba['miktar'] as double)
         .toSet()
         .toList();
   }
@@ -233,6 +246,7 @@ class ArabaState extends State<Araba> {
                                       setState(() {
                                         dropDownValue1 = value!;
                                         selectedModel = value;
+
                                         durum2 = true;
                                       });
                                     },

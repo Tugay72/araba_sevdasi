@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/pages/araba.dart';
+import 'package:flutter/material.dart';
 
 // ignore: camel_case_types, must_be_immutable
 class arabaDondur2 extends StatefulWidget {
@@ -10,10 +10,19 @@ class arabaDondur2 extends StatefulWidget {
   State<arabaDondur2> createState() => _arabaDondurState();
 }
 
+List<double> miktarListesi = miktarListe;
+
 // ignore: camel_case_types
 class _arabaDondurState extends State<arabaDondur2> {
   @override
   Widget build(BuildContext context) {
+    double? calculateFuel(index) {
+      var metre = double.tryParse(widget.mesafe);
+      var miktar = miktarListesi[index];
+      var yeniMesafe = metre! / 1000;
+      return miktar * yeniMesafe;
+    }
+
     return SizedBox(
       child: ListView.builder(
         itemCount: kayitliArabaListesi.length,
@@ -37,7 +46,6 @@ class _arabaDondurState extends State<arabaDondur2> {
               ),
             ),
             onTap: () {
-              //Hesaplama fonksiyonları buraya olucak
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -49,9 +57,9 @@ class _arabaDondurState extends State<arabaDondur2> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  content: const Text(
-                    "",
-                    style: TextStyle(
+                  content: Text(
+                    "${calculateFuel(index).toString()}",
+                    style: const TextStyle(
                       fontSize: 22,
                       fontFamily: "Oswald",
                       fontWeight: FontWeight.w400,

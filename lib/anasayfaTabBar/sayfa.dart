@@ -1,9 +1,13 @@
 import 'package:araba_sevdasi/pages/anasayfa/map_screen.dart';
 import 'package:flutter/material.dart';
 
-class Sayfa extends StatelessWidget {
-  const Sayfa({super.key});
+class Sayfa extends StatefulWidget {
+  @override
+  State<Sayfa> createState() => SayfaState();
+  Sayfa({super.key});
+}
 
+class SayfaState extends State<Sayfa> {
   void git(BuildContext context) {
     Navigator.push(
       context,
@@ -11,12 +15,12 @@ class Sayfa extends StatelessWidget {
     );
   }
 
+  var yolculuk = 5;
+  var yol = 100;
+  var yakit = 10;
+
   @override
   Widget build(BuildContext context) {
-    var yolculuk = 5;
-    var yol = 100;
-    var yakit = 10;
-
     return Scaffold(
       body: Column(
         children: [

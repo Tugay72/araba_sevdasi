@@ -1,4 +1,4 @@
-import 'package:araba_sevdasi/pages/anasayfa/arabaDondur2.dart';
+import 'package:araba_sevdasi/pages/anasayfa/araba_dondur2.dart';
 import 'package:flutter/material.dart';
 
 class Calculate extends StatefulWidget {

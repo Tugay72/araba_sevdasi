@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:araba_sevdasi/pages/anasayfa/calculatePage.dart';
+import 'package:araba_sevdasi/pages/anasayfa/animation_fuel_box.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -56,7 +56,7 @@ class MapScreenState extends State<MapScreen> {
           onPressed: () {
             if (markerLocations.length == 2) {
               _calculateDistance(markerLocations[0], markerLocations[1]).then(
-                (value) => pushCalculatePage(context),
+                (value) => pushTheAnimationPage(context),
               );
             }
           },
@@ -106,8 +106,8 @@ class MapScreenState extends State<MapScreen> {
     infoText = distanceInMeters.toStringAsFixed(2);
   }
 
-  void pushCalculatePage(BuildContext context) {
+  void pushTheAnimationPage(BuildContext context) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => Calculate(distance: infoText)));
+        MaterialPageRoute(builder: (context) => AnimationCalculate(distance: infoText)));
   }
 }

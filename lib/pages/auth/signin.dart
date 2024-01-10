@@ -1,4 +1,3 @@
-import 'package:araba_sevdasi/anaMenu.dart';
 import 'package:araba_sevdasi/pages/auth/animation.dart';
 import 'package:araba_sevdasi/pages/auth/kullanici_sozlesmesi.dart';
 import 'package:flutter/material.dart';

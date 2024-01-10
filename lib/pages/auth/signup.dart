@@ -1,5 +1,6 @@
 import 'package:araba_sevdasi/pages/auth/animation.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:araba_sevdasi/profilListe/kullanici_listesi.dart';
 import 'package:araba_sevdasi/components/buttons.dart';
 import 'package:araba_sevdasi/components/textfieldStructure.dart';
@@ -16,8 +17,8 @@ class SignUp extends StatelessWidget {
   // sign user in method
 
   void signUserUp(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const AnimationLogin()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const AnimationLogin()));
   }
 
   // method for route to singin page

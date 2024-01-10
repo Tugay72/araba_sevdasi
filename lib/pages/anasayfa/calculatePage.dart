@@ -1,3 +1,4 @@
+import 'package:araba_sevdasi/pages/anasayfa/arabaDondur2.dart';
 import 'package:flutter/material.dart';
 
 class Calculate extends StatefulWidget {
@@ -14,10 +15,20 @@ class _CalculateState extends State<Calculate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          "Arabayı Seçiniz:",
+          style: TextStyle(
+            fontSize: 26,
+            fontFamily: "Oswald",
+            fontWeight: FontWeight.w400,
+          ),
+        ),
         backgroundColor: Colors.yellow,
         foregroundColor: Theme.of(context).colorScheme.background,
       ),
-      body: const Center(child: Text("calculate")),
+      body: Center(
+        child: arabaDondur2(mesafe: widget.distance),
+      ),
     );
   }
 }

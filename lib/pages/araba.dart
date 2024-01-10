@@ -10,7 +10,7 @@ IconData directions_car = const IconData(0xe1d7, fontFamily: 'MaterialIcons');
 class Araba extends StatefulWidget {
   @override
   State<Araba> createState() => ArabaState();
-  const Araba({super.key});
+  Araba({super.key});
 }
 
 List<Map<String, dynamic>> kayitliArabaListesi = [];

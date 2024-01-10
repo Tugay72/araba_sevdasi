@@ -51,12 +51,13 @@ class MapScreenState extends State<MapScreen> {
         polylines: Set<Polyline>.of(polylines.values),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 100),
+        padding: const EdgeInsets.only(right: 80),
         child: FloatingActionButton.extended(
           onPressed: () {
             if (markerLocations.length == 2) {
-              _calculateDistance(markerLocations[0], markerLocations[1]);
-              pushCalculatePage(context);
+              _calculateDistance(markerLocations[0], markerLocations[1]).then(
+                (value) => pushCalculatePage(context),
+              );
             }
           },
           label: Text(infoText),

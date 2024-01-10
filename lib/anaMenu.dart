@@ -18,7 +18,7 @@ class AnaMenuState extends State<AnaMenu> {
   List<Widget> pageListFunc() => [
         const Anasayfa(),
         const Yakit(),
-        const Araba(),
+        Araba(),
         Profil(
           indexDegistir: temaDegistir,
         )

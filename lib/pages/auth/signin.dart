@@ -1,4 +1,5 @@
 import 'package:araba_sevdasi/anaMenu.dart';
+import 'package:araba_sevdasi/pages/auth/animation.dart';
 import 'package:araba_sevdasi/pages/auth/kullanici_sozlesmesi.dart';
 import 'package:flutter/material.dart';
 import 'package:araba_sevdasi/components/buttons.dart';
@@ -27,8 +28,8 @@ class Login extends StatefulWidget {
 
 class LoginState extends State<Login> {
   // text editing controllers
-  final _emailController = TextEditingController(text: "emirozturk@gmail.com");
-  final _passwordController = TextEditingController(text: "123");
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   //final _emailController = TextEditingController();
   //final _passwordController = TextEditingController();
   // initialize the emailController
@@ -40,7 +41,7 @@ class LoginState extends State<Login> {
         _passwordController.text == "123" &&
         isChecked) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const AnaMenu()));
+          context, MaterialPageRoute(builder: (context) => const AnimationLogin()));
     } else {
       // Alert message
       if (isChecked == false) {

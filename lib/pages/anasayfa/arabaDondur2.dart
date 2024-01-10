@@ -58,7 +58,7 @@ class _arabaDondurState extends State<arabaDondur2> {
                     ),
                   ),
                   content: Text(
-                    "${calculateFuel(index).toString()}",
+                    "${calculateFuel(index).toString()} L yakar",
                     style: const TextStyle(
                       fontSize: 22,
                       fontFamily: "Oswald",

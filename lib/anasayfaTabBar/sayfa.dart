@@ -22,79 +22,77 @@ class SayfaState extends State<Sayfa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Center(
+        child : 
+      Container(
+        padding: const EdgeInsets.all(16),
+        child:  
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //Harita görseli
-          const SizedBox(
-            width: 390,
+            const Text(
+                  "Hi Emir!",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontFamily: "Oswald",
+                    fontWeight: FontWeight.w800,
+                    color: Color.fromARGB(255, 43, 43, 43),
+                  ),
+                ),
+            const Text(
+                  "Welcome Back,",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: "Oswald",
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromARGB(255, 110, 110, 110),
+                  ),
+                ),
+
+
+          //Map Photo
+           const SizedBox(
+            width: 640,
+            height: 480,
             child: Center(
               child: Image(
-                image: AssetImage("assets/images/anasayfa/map.jpeg"),
+                image: AssetImage("assets/images/anasayfa/map2.png"),
               ),
             ),
           ),
-          const Divider(
-            height: 40,
-          ),
-          //Yolculuğa başla tuşunun olduğu kısım
+          
+          //Start Button
+          
           Padding(
-            padding: const EdgeInsets.only(top: 0),
+            padding: const EdgeInsets.only(left: 64),
             child: SizedBox(
-              height: 160,
-              width: 360,
-              child: Card(
-                surfaceTintColor: Colors.blueGrey.shade400,
-                shadowColor: const Color.fromARGB(255, 255, 193, 40),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        "Happy Fuel'a Hoşgeldin!",
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontFamily: "Oswald",
-                          fontWeight: FontWeight.w400,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: SizedBox(
-                        width: 240,
-                        child: TextButton(
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(255, 255, 193, 40),
-                            ),
-                          ),
-                          child: const Text(
-                            "Yolculuğa Başla",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontFamily: "Oswald",
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                            ),
-                          ),
-                          onPressed: () => git(context),
-                        ),
-                      ),
-                    ),
-                  ],
+              width: 240,
+              child: TextButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                    Color.fromARGB(255, 46, 154, 255),
+                  ),
                 ),
+                child: const Text(
+                  "Start!",
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontFamily: "Oswald",
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+                onPressed: () => git(context),
               ),
             ),
           ),
-          const Divider(
-            height: 40,
-          ),
+
+
           //İstatistikler
-          Column(
+          /*Column(
             children: [
               Text(
                 "İstatistiklerin",
@@ -114,7 +112,7 @@ class SayfaState extends State<Sayfa> {
                       height: 100,
                       width: 120,
                       decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 255, 193, 40),
+                        color: Color.fromARGB(255, 46, 154, 255),
                         borderRadius: BorderRadiusDirectional.vertical(
                           top: Radius.circular(10),
                           bottom: Radius.circular(10),
@@ -159,7 +157,7 @@ class SayfaState extends State<Sayfa> {
                       height: 100,
                       width: 120,
                       decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 255, 193, 40),
+                        color: Color.fromARGB(255, 46, 154, 255),
                         borderRadius: BorderRadiusDirectional.vertical(
                           top: Radius.circular(10),
                           bottom: Radius.circular(10),
@@ -204,7 +202,7 @@ class SayfaState extends State<Sayfa> {
                       height: 100,
                       width: 120,
                       decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 255, 193, 40),
+                        color: Color.fromARGB(255, 46, 154, 255),
                         borderRadius: BorderRadiusDirectional.vertical(
                           top: Radius.circular(10),
                           bottom: Radius.circular(10),
@@ -239,15 +237,17 @@ class SayfaState extends State<Sayfa> {
                             )
                           ],
                         ),
-                      ),
+                      ), 
                     ),
                   ),
                 ],
               ),
             ],
-          ),
+          ), */
         ],
       ),
+      )
+      )
     );
   }
 }

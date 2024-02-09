@@ -17,11 +17,11 @@ class AnasayfaState extends State<Anasayfa> {
       child: Scaffold(
         appBar: AppBar(
           foregroundColor: Theme.of(context).colorScheme.background,
-          backgroundColor: const Color.fromARGB(255, 255, 193, 40),
+          backgroundColor: const Color.fromARGB(255, 46, 154, 255),
           title: TabBar(
             //physics: const NeverScrollableScrollPhysics(),
             indicatorColor: Theme.of(context).colorScheme.background,
-            dividerColor: const Color.fromARGB(255, 255, 193, 40),
+            dividerColor: const Color.fromARGB(255, 46, 154, 255),
             tabs: [
               Tab(
                 //Anasayfa

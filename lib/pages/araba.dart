@@ -142,7 +142,7 @@ class ArabaState extends State<Araba> {
                             const Padding(
                               padding: EdgeInsets.only(top: 36, left: 36),
                               child: Text(
-                                "Araba Ekle",
+                                "Add Car",
                                 style: TextStyle(
                                   fontFamily: "Oswald",
                                   fontSize: 24,
@@ -154,19 +154,20 @@ class ArabaState extends State<Araba> {
                             Padding(
                               padding: const EdgeInsets.only(top: 36, left: 64),
                               child: SizedBox(
-                                width: 180,
+                                width: 200,
                                 height: 48,
                                 child: TextButton(
                                   onPressed: () => git(context),
                                   child: const Row(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.only(left: 16),
+                                        padding: EdgeInsets.only(left: 100),
                                         child: Text(
-                                          "Kayıtlı Arabalarım",
+                                          "My Cars",
                                           style: TextStyle(
                                             fontFamily: "Oswald",
                                             fontSize: 18,
+                                            fontWeight: FontWeight.w500
                                           ),
                                         ),
                                       ),
@@ -241,7 +242,7 @@ class ArabaState extends State<Araba> {
                                   child: DropdownMenu(
                                     menuHeight: 200,
                                     width: 320,
-                                    label: const Text("Araba Modeli"),
+                                    label: const Text("Car Model"),
                                     onSelected: (String? value) {
                                       setState(() {
                                         dropDownValue1 = value!;
@@ -269,7 +270,7 @@ class ArabaState extends State<Araba> {
                                   child: DropdownMenu(
                                     menuHeight: 200,
                                     width: 320,
-                                    label: const Text("Üretim Yılı"),
+                                    label: const Text("Make Year"),
                                     onSelected: (String? value) {
                                       setState(() {
                                         dropDownValue2 = value!;
@@ -308,7 +309,7 @@ class ArabaState extends State<Araba> {
                                     context: context,
                                     builder: (context) => AlertDialog(
                                       title: const Text(
-                                        "Hata!",
+                                        "Error!",
                                         style: TextStyle(
                                           fontSize: 30,
                                           fontFamily: "Oswald",
@@ -316,7 +317,7 @@ class ArabaState extends State<Araba> {
                                         ),
                                       ),
                                       content: const Text(
-                                        "Marka, model ve üretim yılını seçiniz!",
+                                        "Choose brand, model and year!",
                                         style: TextStyle(
                                           fontSize: 22,
                                           fontFamily: "Oswald",
@@ -328,7 +329,7 @@ class ArabaState extends State<Araba> {
                                           onPressed: () =>
                                               Navigator.pop(context),
                                           child: const Text(
-                                            "Tamam",
+                                            "OK!",
                                             style: TextStyle(
                                               fontSize: 18,
                                               fontFamily: "Oswald",

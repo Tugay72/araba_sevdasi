@@ -53,24 +53,24 @@ class AnaMenuState extends State<AnaMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 255, 193, 40),
+              backgroundColor:  Color.fromARGB(255, 46, 154, 255),
               icon: Icon(Icons.home_rounded),
-              label: "Ana Sayfa",
+              label: "Home",
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 212, 0, 194),
               icon: Icon(Icons.local_gas_station_rounded),
-              label: "Yakıt",
+              label: "Fuel",
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 46, 154, 255),
               icon: Icon(Icons.directions_car),
-              label: "Araba",
+              label: "Cars",
             ),
             BottomNavigationBarItem(
               backgroundColor: Color.fromARGB(255, 236, 43, 43),
               icon: Icon(Icons.account_circle),
-              label: "Profil",
+              label: "Profile",
             ),
           ],
           currentIndex: suAnkiIndex,
